@@ -1,0 +1,61 @@
+{
+  "import React Router/Route/Link": {
+    "prefix": "imrrl",
+    "body": [
+      "import { BrowserRouter as Router, Route, Link } from 'react-router-dom'",
+      ""
+    ],
+    "description": "import React Router/Route/Link\n"
+  },
+  "import React Router/Route": {
+    "prefix": "imrr",
+    "body": [
+      "import { BrowserRouter as Router, Route } from 'react-router-dom'",
+      ""
+    ],
+    "description": "import React Router/Route\n"
+  },
+  "import React Route": {
+    "prefix": "imr",
+    "body": [
+      "import { Route } from 'react-router-dom'",
+      ""
+    ],
+    "description": "import Route(React Router)\n"
+  },
+  "import React Router Link": {
+    "prefix": "iml",
+    "body": [
+      "import { Link } from 'react-router-dom'",
+      ""
+    ],
+    "description": "import Link(React Router)\n"
+  },
+  "import React Router NavLink": {
+    "prefix": "imnl",
+    "body": [
+      "import { NavLink } from 'react-router-dom'",
+      ""
+    ],
+    "description": "import NavLink(React Router)\n"
+  },
+  "React Router Route": {
+    "prefix": ["rr", "route"],
+    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+  },
+  "React Router Link": {
+    "prefix": ["rl", "link"],
+    "body": "<Link to={${1:path}}>${2:anchorText}</Link>\n"
+  },
+  "React Router NavLink": {
+    "prefix": ["rnl", "navlink"],
+    "body": "<NavLink to={${1:path}}>${2:anchorText}</NavLink>\n"
+  },
+  "React Router Redirect": {
+    "prefix": ["rd", "redirect"],
+    "body": [
+      "<Redirect from=\"/users/:id\" to=\"/users/profile/:id\" />",
+      "<Route path=\"/users/profile/:id\" component={Profile} />"
+    ]
+  }
+}

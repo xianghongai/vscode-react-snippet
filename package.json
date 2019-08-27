@@ -1,0 +1,52 @@
+{
+  "name": "vscode-react-snippet",
+  "publisher": "NicholasHsiang",
+  "displayName": "React Snippet",
+  "description": "Code snippets for React",
+  "icon": "art/icon.png",
+  "version": "0.0.1",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-react-snippet/issues"
+  },
+  "homepage": "https://github.com/xianghongai/vscode-react-snippet/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
+  },
+  "engines": {
+    "vscode": "^0.12.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "React Snippet"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node merge.js && vsce package"
+  },
+  "devDependencies": {
+    "glob": "^7.1.4"
+  }
+}

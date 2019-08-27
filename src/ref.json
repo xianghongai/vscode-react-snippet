@@ -1,0 +1,18 @@
+{
+  "createRef": {
+    "prefix": "ref",
+    "body": [
+      "this.${1:refName}Ref = React.createRef()",
+      ""
+    ],
+    "description": "Create ref statement used inside constructor\n"
+  },
+  "forwardRef": {
+    "prefix": "reff",
+    "body": [
+      "const ref = React.createRef()",
+      ""
+    ],
+    "description": "Forward ref statement used inside component\n"
+  }
+}

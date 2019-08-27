@@ -1,0 +1,81 @@
+{
+  "import React": {
+    "prefix": "imr",
+    "body": [
+      "import React from 'react';",
+      ""
+    ]
+  },
+  "import React useState": {
+    "prefix": "imrus",
+    "body": [
+      "import React, { useState } from 'react';",
+      ""
+    ]
+  },
+  "import React useState useEffect": {
+    "prefix": "imruu",
+    "body": [
+      "import React, { useState, useEffect } from 'react';",
+      ""
+    ]
+  },
+  "import ReactDOM": {
+    "prefix": "imrd",
+    "body": [
+      "import ReactDOM from 'react-dom';",
+      ""
+    ]
+  },
+  "import react component": {
+    "prefix": "imrc",
+    "body": [
+      "import React, { Component } from 'react';"
+    ]
+  },
+  "import React, { Component } & PropTypes": {
+    "prefix": "imrcp",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
+  "import React, { PureComponent }": {
+    "prefix": "imrpc",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      ""
+    ]
+  },
+  "import React, { PureComponent } & PropTypes": {
+    "prefix": "imrpcp",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
+  "import React, { memo }": {
+    "prefix": "imrm",
+    "body": [
+      "import React, { memo } from 'react'",
+      ""
+    ]
+  },
+  "import React, { memo } & PropTypes": {
+    "prefix": "imrmp",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
+  "import PropTypes": {
+    "prefix": "impt",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  }
+}
