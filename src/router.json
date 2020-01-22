@@ -1,61 +1,158 @@
 {
-  "import React Router/Route/Link": {
-    "prefix": "imrrl",
+  "import React Router/Switch/Route": {
+    "prefix": "imrrsr",
     "body": [
-      "import { BrowserRouter as Router, Route, Link } from 'react-router-dom'",
+      "import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';",
       ""
     ],
-    "description": "import React Router/Route/Link\n"
+    "description": "import BrowserRouter/Switch/Route\n"
   },
-  "import React Router/Route": {
-    "prefix": "imrr",
+  "import React Switch/Route": {
+    "prefix": "imrsr",
     "body": [
-      "import { BrowserRouter as Router, Route } from 'react-router-dom'",
+      "import { Switch, Route } from 'react-router-dom';",
       ""
     ],
-    "description": "import React Router/Route\n"
-  },
-  "import React Route": {
-    "prefix": "imr",
-    "body": [
-      "import { Route } from 'react-router-dom'",
-      ""
-    ],
-    "description": "import Route(React Router)\n"
+    "description": "import Switch & Route\n"
   },
   "import React Router Link": {
-    "prefix": "iml",
+    "prefix": "imrl",
     "body": [
-      "import { Link } from 'react-router-dom'",
+      "import { Link } from 'react-router-dom';",
       ""
     ],
     "description": "import Link(React Router)\n"
   },
   "import React Router NavLink": {
-    "prefix": "imnl",
+    "prefix": "imrnl",
     "body": [
-      "import { NavLink } from 'react-router-dom'",
+      "import { NavLink } from 'react-router-dom';",
       ""
     ],
     "description": "import NavLink(React Router)\n"
   },
+  "import React withRouter": {
+    "prefix": "imrnl",
+    "body": [
+      "import { withRouter } from 'react-router';",
+      ""
+    ],
+    "description": "import withRouter(React Router)\n"
+  },
+  "import React Router useHistory": {
+    "prefix": "imruh",
+    "body": [
+      "import { useHistory } from 'react-router-dom';",
+      ""
+    ],
+    "description": "import useHistory(React Router)\n"
+  },
+  "useHistory": {
+    "prefix": "ruh",
+    "body": [
+      "const history = useHistory();",
+      "history.push(${1:\"path\"});"
+    ],
+    "description": "useHistory(React Router)\n"
+  },
+  "import React Router useLocation": {
+    "prefix": "imrul",
+    "body": [
+      "import { useLocation } from 'react-router-dom';",
+      ""
+    ],
+    "description": "import useLocation(React Router)\n"
+  },
+  "useLocation": {
+    "prefix": "rul",
+    "body": [
+      "const location = useLocation();",
+      "${1:location.pathname}"
+    ],
+    "description": "useLocation(React Router)\n"
+  },
+  "import React Router useParams": {
+    "prefix": "imrup",
+    "body": [
+      "import { useParams } from 'react-router-dom';",
+      ""
+    ],
+    "description": "import useParams(React Router)\n"
+  },
+  "useParams": {
+    "prefix": "rup",
+    "body": [
+      "const ${1:id} = useParams();"
+    ],
+    "description": "useParams(React Router)\n"
+  },
+  "import React Router useRouteMatch": {
+    "prefix": "imrurm",
+    "body": [
+      "import { useRouteMatch } from 'react-router-dom';",
+      ""
+    ],
+    "description": "import useRouteMatch(React Router)\n"
+  },
+  "useRouteMatch": {
+    "prefix": "rurm",
+    "body": [
+      "const match = useRouteMatch();"
+    ],
+    "description": "useRouteMatch(React Router)\n"
+  },
   "React Router Route": {
-    "prefix": ["rr", "route"],
-    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+    "prefix": "rr",
+    "body": [
+      "<Route path='${1:path}'>",
+      "<{$2:Component} />",
+      "</Route>"
+    ],
+    "description": "Route\n"
+  },
+  "React Router Switch": {
+    "prefix": "rsr",
+    "body": [
+      "<Switch>",
+      "\t<Route exact path=\"/\">",
+      "\t\t<${1:Component} />",
+      "\t</Route>",
+      "\t<Route path=\"${2:path}\">",
+      "\t\t<${3:Component} />",
+      "\t</Route>",
+      "</Switch>"
+    ],
+    "description": "Switch\n"
   },
   "React Router Link": {
-    "prefix": ["rl", "link"],
-    "body": "<Link to={${1:path}}>${2:anchorText}</Link>\n"
+    "prefix": [
+      "rl",
+      "link"
+    ],
+    "body": "<Link to={${1:path}}>${2:anchorText}</Link>\n",
+    "description": "Link\n"
   },
   "React Router NavLink": {
-    "prefix": ["rnl", "navlink"],
-    "body": "<NavLink to={${1:path}}>${2:anchorText}</NavLink>\n"
+    "prefix": [
+      "rnl",
+      "navlink"
+    ],
+    "body": "<NavLink to={${1:path}}>${2:anchorText}</NavLink>\n",
+    "description": "NavLink\n"
   },
   "React Router Redirect": {
-    "prefix": ["rd", "redirect"],
+    "prefix": [
+      "rre",
+      "redirect"
+    ],
     "body": [
-      "<Redirect from=\"/users/:id\" to=\"/users/profile/:id\" />",
-      "<Route path=\"/users/profile/:id\" component={Profile} />"
-    ]
+      "<Switch>",
+      "\t<Redirect from=\"${1:/users/:id}\" to=\"${2:/users/profile/:id}\" />",
+      "\t<Route path=\"${2:/users/profile/:id}\">",
+      "\t\t<${3:Component} />",
+      "\t</Route>",
+      "</Switch>"
+    ],
+    "description": "Redirect\n"
   }
 }

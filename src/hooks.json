@@ -19,19 +19,9 @@
     "body": [
       "useEffect(() => {",
       "\t${1}",
-      "});"
+      "}, []);"
     ],
-    "description": "Effect Hook Without Cleanup\n"
-  },
-  "useEffect Optimizing": {
-    "prefix": "ueo",
-    "body": [
-      "useEffect(() => {",
-      "\t${2}",
-      "",
-      "}, [${1:input}]);"
-    ],
-    "description": "Effect Hook Optimizing\n"
+    "description": "Effect Hook\n"
   },
   "useEffect Cleanup": {
     "prefix": "uec",
@@ -42,22 +32,9 @@
       "\treturn () => {",
       "\t\t${1:cleanUpEffect}",
       "\t};",
-      "});"
+      "}, []);"
     ],
     "description": "Effects Cleanup\n"
-  },
-  "useEffect Cleanup and Optimizing": {
-    "prefix": "ueco",
-    "body": [
-      "useEffect(() => {",
-      "\t${3}",
-      "",
-      "\treturn () => {",
-      "\t\t${2:cleanUpEffect}",
-      "\t};",
-      "}, [${1:input}]);"
-    ],
-    "description": "Effects Cleanup and Optimizing Performance by Skipping Effects\n"
   },
   "useContext": {
     "prefix": [
@@ -83,11 +60,9 @@
       "ucb"
     ],
     "body": [
-      "useCallback(",
-      "\t() => {",
-      "\t\t${1:callback}",
-      "\t},",
-      "\t[${2:input}],",
+      "useCallback(() => {",
+      "\t${1:callback($2)}",
+      "}, [${2:input}],",
       ")"
     ]
   },
