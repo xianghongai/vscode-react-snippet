@@ -1,63 +1,57 @@
 {
-  "create react class PureComponent, default export": {
-    "prefix": "rcpcd",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      ""
-    ],
-    "description": "Creates a React pure component class\n"
-  },
-  "create react class PureComponent": {
-    "prefix": "rcpc",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      "",
-      "class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      "",
-      "export default ${1:$TM_FILENAME_BASE}",
-      ""
-    ],
-    "description": "Creates a React pure component class export\n"
-  },
-  "create react class PureComponent with PropTypes, default export": {
-    "prefix": "rcpcpd",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "\tstatic propTypes = {",
-      "",
-      "\t}",
-      "",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      ""
-    ],
-    "description": "Creates a React component class\n"
-  }
+	"Create React.PureComponent and export it by default, it's works with class-based components": {
+		"prefix": ["rpc"],
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"",
+			"export default class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends PureComponent {",
+			"\tconstructor(props) {",
+			"\t\tsuper(props)",
+			"",
+			"\t\tthis.state = {",
+			"\t\t\t\t $2",
+			"\t\t}",
+			"",
+			"\t\tthis.handleEvent = this.handleEvent.bind(this)",
+			"\t}",
+			"",
+			"\tcomponentDidMount() {",
+			"\t\t$3",
+			"\t}",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<>",
+			"\t\t\t\t$0",
+			"\t\t\t</>",
+			"\t\t)",
+			"\t}",
+			"}",
+			""
+		],
+		"description": "`React.PureComponent` is similar to `React.Component`. The difference between them is that `React.Component` doesn’t implement `shouldComponentUpdate()`, but `React.PureComponent` implements it with a shallow prop and state comparison.\n"
+	},
+	"Create React.PureComponent with PropTypes and export it by default, it's works with class-based components": {
+		"prefix": ["rpcpt"],
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"export default class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends PureComponent {",
+			"\tstatic propTypes = {",
+			"",
+			"\t}",
+			"",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<>",
+			"\t\t\t\t$0",
+			"\t\t\t</>",
+			"\t\t)",
+			"\t}",
+			"}",
+			""
+		],
+		"description": "`React.PureComponent` is similar to `React.Component`. The difference between them is that `React.Component` doesn’t implement `shouldComponentUpdate()`, but `React.PureComponent` implements it with a shallow prop and state comparison.\n"
+	}
 }
