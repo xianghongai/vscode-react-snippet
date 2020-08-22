@@ -1,29 +1,7 @@
 {
-  "region": {
-    "prefix": "region",
-    "body": [
-      "// #region $1",
-      "$2",
-      "// #endregion"
-    ],
-    "description": "code fold\n"
-  },
-  "hocComponent": {
-    "prefix": "hoc",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default (WrappedComponent) => {",
-      "\tconst hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "\thocComponent.propTypes = {",
-      "\t}",
-      "",
-      "\treturn hocComponent",
-      "}",
-      ""
-    ],
-    "description": "HOC Component\n"
-  }
+	"region": {
+		"prefix": ["region"],
+		"body": ["// #region $1", "$2", "// #endregion"],
+		"description": "Folding regions\n"
+	}
 }

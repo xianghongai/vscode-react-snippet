@@ -1,0 +1,26 @@
+{
+	"HOC Component": {
+		"prefix": ["hoc"],
+		"body": [
+			"import React, { Component } from 'react'",
+			"",
+			"const with${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = (WrappedComponent) => {",
+			"\treturn class extends Component {",
+			"\t\tconstructor(props) {",
+			"\t\t\tsuper(props)",
+			"\t\t\tthis.state = { property }",
+			"\t\t}",
+			"",
+			"\t\trender() {",
+			"\t\t\tconst newProps = { property }",
+			"\t\t\treturn <WrappedComponent {...this.props} {...newProps} />",
+			"\t\t}",
+			"\t}",
+			"}",
+			"",
+			"export default withTestReact",
+			"// const EnhancedComponent = with${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(WrappedComponent)"
+		],
+		"description": "HOC Component\n"
+	}
+}
