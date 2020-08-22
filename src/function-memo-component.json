@@ -30,7 +30,7 @@
 			"})",
 			"",
 			"${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}.propTypes = {",
-			"",
+			"\t",
 			"}",
 			"",
 			"export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}",

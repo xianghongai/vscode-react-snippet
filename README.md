@@ -67,19 +67,19 @@
 
 ### Functional Component **Hooks**
 
-| prefix | body                                                                                | description                                      |
-|--------|-------------------------------------------------------------------------------------|--------------------------------------------------|
-| `us`   | `const [state, setState] = useState(initialState)`                                  | **R**eact **u**se**S**tate Hook                  |
-| `ue`   | `useEffect(() => { /* side effects */ }, []);`                                      | asynchronously, **R**eact **u**se**E**ffect Hook |
-| `uec`  | `useEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])`       | **u**se**E**ffect **C**leanup                    |
-| `uc`   | `const context = useContext(context)`                                               | **u**se**C**ontext                               |
-| `ur`   | `const [state, dispatch] = useReducer(reducer, initializerArg, initializer)`        | **u**se**R**educer                               |
-| `ucb`  | `let memoizedCallback = useCallback(() => { fn() }, [deps])`                        | **u**se**C**allback                              |
-| `um`   | `let memoizedValue = useMemo(() => {}, [deps])`                                     | **u**se**M**emo                                  |
-| `ure`  | `const ref = useRef(initialValue)`                                                  | **u**se**R**ef                                   |
-| `uih`  | `useImperativeHandle(ref, () => { handler }, [deps])`                               | **u**se**I**mperative**H**andle                  |
-| `udv`  | `useDebugValue(value)`                                                              | **u**se**D**ebug**V**alue                        |
-| `ule`  | `useLayoutEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])` | synchronously, **u**se**L**ayout**E**ffect       |
+| prefix | body                                                                                | description                                |
+|--------|-------------------------------------------------------------------------------------|--------------------------------------------|
+| `us`   | `const [state, setState] = useState(initialState)`                                  | **u**se**S**tate                           |
+| `ue`   | `useEffect(() => { /* side effects */ }, []);`                                      | asynchronously, **u**se**E**ffect          |
+| `uec`  | `useEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])`       | **u**se**E**ffect **C**leanup              |
+| `uc`   | `const context = useContext(context)`                                               | **u**se**C**ontext                         |
+| `ur`   | `const [state, dispatch] = useReducer(reducer, initializerArg, initializer)`        | **u**se**R**educer                         |
+| `ucb`  | `let memoizedCallback = useCallback(() => { fn() }, [deps])`                        | **u**se**C**allback                        |
+| `um`   | `let memoizedValue = useMemo(() => {}, [deps])`                                     | **u**se**M**emo                            |
+| `ure`  | `const ref = useRef(initialValue)`                                                  | **u**se**R**ef                             |
+| `uih`  | `useImperativeHandle(ref, () => { handler }, [deps])`                               | **u**se**I**mperative**H**andle            |
+| `udv`  | `useDebugValue(value)`                                                              | **u**se**D**ebug**V**alue                  |
+| `ule`  | `useLayoutEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])` | synchronously, **u**se**L**ayout**E**ffect |
 
 
 ### Functional Component
@@ -259,38 +259,49 @@ export default memo(function FileNamePascalCase(props) {
 
 ### PropTypes
 
-| prefix   | body                                                                                                                                  |
-|----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| `pta`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray,</code>                                                      |
-| `ptar`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray.is<strong>R</strong>equired,</code>                          |
-| `ptb`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>b</strong>ool,</code>                                                       |
-| `ptbr`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>b</strong>ool.is<strong>R</strong>equired,</code>                           |
-| `ptf`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>f</strong>unc,</code>                                                       |
-| `ptfr`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>f</strong>unc.is<strong>R</strong>equired,</code>                           |
-| `ptn`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>n</strong>umber,</code>                                                     |
-| `ptnr`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>n</strong>umber.is<strong>R</strong>equired,</code>                         |
-| `pto`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>o</strong>bject,</code>                                                     |
-| `ptor`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>o</strong>bject.is<strong>R</strong>equired,</code>                         |
-| `pts`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>s</strong>tring,</code>                                                     |
-| `ptsr`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>s</strong>tring.is<strong>R</strong>equired,</code>                         |
-| `ptnd`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>n</strong>o<strong>d</strong>e,</code>                                      |
-| `ptndr`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>n</strong>o<strong>d</strong>e.is<strong>R</strong>equired,</code>          |
-| `ptel`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>el</strong>ement,</code>                                                    |
-| `ptelr`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>el</strong>ement.is<strong>R</strong>equired,</code>                        |
-| `pti`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>i</strong>nstanceOf(),</code>                                               |
-| `ptir`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>i</strong>nstanceOf().is<strong>R</strong>equired,</code>                   |
-| `pte`    | <code><strong>P</strong>rop<strong>T</strong>ypes.on<strong>e</strong>Of([]),</code>                                                  |
-| `pter`   | <code><strong>P</strong>rop<strong>T</strong>ypes.on<strong>e</strong>Of([]).is<strong>R</strong>equired,</code>                      |
-| `ptet`   | <code><strong>P</strong>rop<strong>T</strong>ypes.on<strong>e</strong>Of<strong>T</strong>ype([]),</code>                             |
-| `ptetr`  | <code><strong>P</strong>rop<strong>T</strong>ypes.on<strong>e</strong>Of<strong>T</strong>ype([]).is<strong>R</strong>equired,</code> |
-| `ptao`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray<strong>O</strong>f(),</code>                                 |
-| `ptaor`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray<strong>O</strong>f().is<strong>R</strong>equired,</code>     |
-| `ptoo`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>o</strong>bject<strong>O</strong>f(),</code>                                |
-| `ptoor`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>o</strong>bject<strong>O</strong>f().is<strong>R</strong>equired,</code>    |
-| `ptsh`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>sh</strong>ape({}),</code>                                                  |
-| `ptshr`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>sh</strong>ape({}).is<strong>R</strong>equired,</code>                      |
-| `ptypes` | <code>static <strong>p</strong>rop<strong>Types</strong> = {}</code>                                                                  |
-| `ptany`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>any</strong>,</code>                                                        |
+| prefix                    | body                                                                                     |
+|---------------------------|------------------------------------------------------------------------------------------|
+| `pt.array`                | `PropTypes.array,`                                                                       |
+| `pt.array.required`       | `PropTypes.array.isRequired,`                                                            |
+| `pt.bool`                 | `PropTypes.bool,`                                                                        |
+| `pt.bool.required`        | `PropTypes.bool.isRequired,`                                                             |
+| `pt.func`                 | `PropTypes.func,`                                                                        |
+| `pt.func.required`        | `PropTypes.func.isRequired,`                                                             |
+| `pt.number`               | `PropTypes.number,`                                                                      |
+| `pt.number.required`      | `PropTypes.number.isRequired,`                                                           |
+| `pt.object`               | `PropTypes.object,`                                                                      |
+| `pt.object.required`      | `PropTypes.object.isRequired,`                                                           |
+| `pt.string`               | `PropTypes.string,`                                                                      |
+| `pt.string.required`      | `PropTypes.string.isRequired,`                                                           |
+| `pt.symbol`               | `PropTypes.symbol,`                                                                      |
+| `pt.symbol.required`      | `PropTypes.symbol.isRequired,`                                                           |
+| `pt.any`                  | `PropTypes.any,`                                                                         |
+| `pt.any.required`         | `PropTypes.any.isRequired,`                                                              |
+| `pt.arrayOf`              | `PropTypes.arrayOf(),`                                                                   |
+| `pt.arrayOf.required`     | `PropTypes.arrayOf().isRequired,`                                                        |
+| `pt.element`              | `PropTypes.element,`                                                                     |
+| `pt.element.required`     | `PropTypes.element.isRequired,`                                                          |
+| `pt.elementType`          | `PropTypes.elementType,`                                                                 |
+| `pt.elementType.required` | `PropTypes.elementType.isRequired,`                                                      |
+| `pt.instanceOf`           | `PropTypes.instanceOf(Constructor),`                                                     |
+| `pt.instanceOf.required`  | `PropTypes.instanceOf(Constructor).isRequired,`                                          |
+| `pt.node`                 | `PropTypes.node,`                                                                        |
+| `pt.node.required`        | `PropTypes.node.isRequired,`                                                             |
+| `pt.objectOf`             | `PropTypes.objectOf(),`                                                                  |
+| `pt.objectOf.required`    | `PropTypes.objectOf().isRequired,`                                                       |
+| `pt.oneOf`                | `PropTypes.oneOf(value),`                                                                |
+| `pt.oneOf.required`       | `PropTypes.oneOf(value).isRequired,`                                                     |
+| `pt.oneOfType`            | `PropTypes.oneOfType([]),`                                                               |
+| `pt.oneOfType.required`   | `PropTypes.oneOfType([]).isRequired,`                                                    |
+| `pt.shape`                | `PropTypes.shape({}),`                                                                   |
+| `pt.shape.required`       | `PropTypes.shape({}).isRequired,`                                                        |
+| `pt.exact`                | `PropTypes.exact({}),`                                                                   |
+| `pt.exact.required`       | `PropTypes.exact({}).isRequired,`                                                        |
+| `pt.custom`               | `function (props, propName, componentName) {}`                                           |
+| `pt.custom.array`         | `PropTypes.arrayOf(function (propValue, key, componentName, location, propFullName) {})` |
+| `pt.checkPropTypes`       | `PropTypes.checkPropTypes(MyComponent.propTypes, props, 'prop', 'MyComponent')`          |
+| `pt.resetWarningCache`    | `PropTypes.resetWarningCache()`                                                          |
+| `PT.defaultProps`         | `static defaultProps = {}`                                                               |
 
 
 ### Chore
