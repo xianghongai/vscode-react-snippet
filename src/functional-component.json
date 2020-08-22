@@ -1,104 +1,106 @@
 {
-  "create react functional component export": {
-    "prefix": "rfc",
-    "body": [
-      "import React from 'react';",
-      "",
-      "function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}};",
-      ""
-    ],
-    "description": "Creates a React Functional Component\n"
-  },
-  "create react functional component, default export": {
-    "prefix": "rfcd",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Functional Component\n"
-  },
-  "create react functional component with PropTypes": {
-    "prefix": "rfcp",
-    "body": [
-      "import React from 'react';",
-      "import PropTypes from 'prop-types';",
-      "",
-      "function ${1:${TM_FILENAME_BASE}}(props) {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "",
-      "};",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}};",
-      "",
-      ""
-    ],
-    "description": "Creates a React Functional Component with PropTypes\n"
-  },
-  "react arrow function component": {
-    "prefix": [
-      "rafc",
-      "rafce"
-    ],
-    "body": [
-      "import React from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}};",
-      ""
-    ],
-    "description": "Creates a React Arrow Function Component\n"
-  },
-  "create react arrow function component with PropTypes": {
-    "prefix": "rafcp",
-    "body": [
-      "import React from 'react';",
-      "import PropTypes from 'prop-types';",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = props => {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "};",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "",
-      "};",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}};",
-      ""
-    ],
-    "description": "Creates a React Arrow Function Component with PropTypes\n"
-  }
+	"React Functional Component": {
+		"prefix": ["rfc"],
+		"body": [
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Creates a React Functional Component\n"
+	},
+	"React Functional Component and export": {
+		"prefix": ["rfce"],
+		"body": [
+			"export function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Creates a React Functional Component and export\n"
+	},
+	"React Functional Component and export it by default": {
+		"prefix": ["rfced"],
+		"body": [
+			"import React from 'react'",
+			"",
+			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Creates a React Functional Component and export it by default\n"
+	},
+	"React Functional Component with PropTypes": {
+		"prefix": ["rfcpt"],
+		"body": [
+			"import React from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(props) {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			"",
+			"${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}.propTypes = {",
+			"",
+			"}",
+			"",
+			"export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}",
+			""
+		],
+		"description": "Creates a React Functional Component with PropTypes\n"
+	},
+	"React Arrow Function Component": {
+		"prefix": ["rafc"],
+		"body": [
+			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = (${2:props}) => {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			""
+		],
+		"description": "Creates a React Arrow Function Component\n"
+	},
+	"React Arrow Function Component with PropTypes": {
+		"prefix": ["rafcpt"],
+		"body": [
+			"import React from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = (${2:props}) => {",
+			"\treturn (",
+			"\t\t<>",
+			"\t\t\t$0",
+			"\t\t</>",
+			"\t)",
+			"}",
+			"",
+			"${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}.propTypes = {",
+			"",
+			"}",
+			"",
+			"export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}",
+			""
+		],
+		"description": "Creates a React Arrow Function Component with PropTypes\n"
+	}
 }

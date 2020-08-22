@@ -1,125 +1,116 @@
 {
-  "useState": {
-    "prefix": [
-      "useState",
-      "us",
-      "rus"
-    ],
-    "body": [
-      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
-    ],
-    "description": "State Hook\n"
-  },
-  "useEffect Without Cleanup": {
-    "prefix": [
-      "useEffect",
-      "ue",
-      "rue"
-    ],
-    "body": [
-      "useEffect(() => {",
-      "\t${1}",
-      "}, []);"
-    ],
-    "description": "Effect Hook\n"
-  },
-  "useEffect Cleanup": {
-    "prefix": "uec",
-    "body": [
-      "useEffect(() => {",
-      "\t${2}",
-      "",
-      "\treturn () => {",
-      "\t\t${1:cleanUpEffect}",
-      "\t};",
-      "}, []);"
-    ],
-    "description": "Effects Cleanup\n"
-  },
-  "useContext": {
-    "prefix": [
-      "useContext",
-      "uc"
-    ],
-    "body": [
-      "const ${1:context} = useContext(${2:contextValue})"
-    ]
-  },
-  "useReducer": {
-    "prefix": [
-      "useReducer",
-      "ur"
-    ],
-    "body": [
-      "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"
-    ]
-  },
-  "useCallback": {
-    "prefix": [
-      "useCallback",
-      "ucb"
-    ],
-    "body": [
-      "useCallback(() => {",
-      "\t${1:callback($2)}",
-      "}, [${2:input}],",
-      ")"
-    ]
-  },
-  "useMemo": {
-    "prefix": [
-      "useMemo",
-      "um"
-    ],
-    "body": [
-      "useMemo(() => ${1:function}, ${2:input})"
-    ]
-  },
-  "useRef": {
-    "prefix": [
-      "useRef",
-      "ure"
-    ],
-    "body": [
-      "const ${1:ref} = useRef(${2:initialValue})"
-    ]
-  },
-  "useImperativeHandle": {
-    "prefix": [
-      "useImperativeHandle",
-      "uih"
-    ],
-    "body": [
-      "useImperativeHandle(",
-      "\t${1:ref},",
-      "\t() => {",
-      "\t\t${2:handler}",
-      "\t},",
-      "\t[${3:input}],",
-      ")"
-    ]
-  },
-  "useDebugValue": {
-    "prefix": [
-      "useDebugValue",
-      "udv"
-    ],
-    "body": [
-      "useDebugValue(${1:value})"
-    ]
-  },
-  "useLayoutEffect": {
-    "prefix": [
-      "useLayoutEffect",
-      "ule"
-    ],
-    "body": [
-      "useLayoutEffect(() => {",
-      "\treturn () => {",
-      "\t\t${1:effect}",
-      "\t},",
-      "\t[${2:input}]",
-      "})"
-    ]
-  }
+	"useState": {
+		"prefix": ["us"],
+		"body": ["const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"],
+		"description": "State Hook\n"
+	},
+	"useEffect Without Cleanup": {
+		"prefix": ["ue"],
+		"body": ["useEffect(() => {", "\t$1", "}, [])"],
+		"description": "Effect Hook\n"
+	},
+	"useEffect Cleanup": {
+		"prefix": ["uec"],
+		"body": [
+			"useEffect(() => {",
+			"\t// side effects",
+			"\t$1",
+			"",
+			"\t// cleanup",
+			"\treturn () => {",
+			"\t\t$2",
+			"\t}",
+			"}, [])"
+		],
+		"description": "Effects Cleanup\n"
+	},
+	"useContext": {
+		"prefix": ["uc"],
+		"body": ["const ${1:context} = useContext(${2:context})"]
+	},
+	"useReducer": {
+		"prefix": ["ur"],
+		"body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initializerArg})"]
+	},
+	"useCallback": {
+		"prefix": ["ucb"],
+		"body": ["let ${1:memoizedCallback} = useCallback(() => {", "\t${3:fn($2)}", "}, [${2:deps}])"],
+		"description": "Returns a memoized callback.\n"
+	},
+	"useMemo": {
+		"prefix": ["um"],
+		"body": ["let ${1:memoizedValue} = useMemo(() => ${3:computeExpensiveValue}($2), [${2:deps}])"],
+		"description": "Returns a memoized value.\n"
+	},
+	"useRef": {
+		"prefix": ["ure"],
+		"body": ["const ${1:ref} = useRef(${2:initialValue})"],
+		"description": "`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.\n"
+	},
+	"useImperativeHandle": {
+		"prefix": ["uih"],
+		"body": [
+			"// exposed components",
+			"import React, { useRef, useImperativeHandle, forwardRef } from 'react'",
+			"",
+			"function Button(props, ref) {",
+			"  const buttonRef = useRef()",
+			"  useImperativeHandle(ref, () => ({",
+			"    exposedProperty: () => {",
+			"      console.log(`event in Button`)",
+			"    },",
+			"  }))",
+			"  return (",
+			"    <button ref={buttonRef} {...props}>",
+			"      Button",
+			"    </button>",
+			"  )",
+			"}",
+			"",
+			"",
+			"export default forwardRef(Button)",
+			"",
+			"",
+			"// parent components ",
+			"import React, { useRef } from 'react'",
+			"import Button from './Button'",
+			"",
+			"function Form() {",
+			"  const buttonRef = useRef(null)",
+			"",
+			"  const handleClick = () => {",
+			"    console.log(Object.keys(buttonRef.current)) // ['exposedProperty']",
+			"    console.log('event in Form')",
+			"    buttonRef.current.exposedProperty()",
+			"  }",
+			"",
+			"  return (",
+			"    <>",
+			"      <Button onClick={handleClick} ref={buttonRef} />",
+			"    </>",
+			"  )",
+			"}"
+		],
+		"description": "`useImperativeHandle` customizes the instance value that is exposed to parent components when using `ref`.\n"
+	},
+	"useDebugValue": {
+		"prefix": ["udv"],
+		"body": ["useDebugValue(${1:value})"],
+		"description": "`useDebugValue` can be used to display a label for custom hooks in React DevTools.\n"
+	},
+	"useLayoutEffect": {
+		"prefix": ["ule"],
+		"body": [
+			"useLayoutEffect(() => {",
+			"\t// side effects",
+			"\t$1",
+			"",
+			"\t// cleanup",
+			"\treturn () => {",
+			"\t\t$2",
+			"\t}",
+			"}, [])"
+		],
+		"description": "Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.\n"
+	}
 }
