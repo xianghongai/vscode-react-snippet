@@ -1,10 +1,7 @@
 {
-  "createContext": {
-    "prefix": "context",
-    "body": [
-      "const ${1:contextName} = React.createContext()",
-      ""
-    ],
-    "description": "Create React context\n"
-  }
+	"createContext": {
+		"prefix": ["context"],
+		"body": ["const ${1:contextName} = React.createContext()", ""],
+		"description": "Create React context\n"
+	}
 }

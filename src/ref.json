@@ -1,18 +1,18 @@
 {
-  "createRef": {
-    "prefix": "ref",
-    "body": [
-      "this.${1:refName}Ref = React.createRef()",
-      ""
-    ],
-    "description": "Create ref statement used inside constructor\n"
-  },
-  "forwardRef": {
-    "prefix": "reff",
-    "body": [
-      "const ref = React.createRef()",
-      ""
-    ],
-    "description": "Forward ref statement used inside component\n"
-  }
+	"createRef": {
+		"prefix": ["ref"],
+		"body": ["this.${1:refName}Ref = React.createRef()", ""],
+		"description": "Create ref statement used inside constructor\n"
+	},
+	"forwardRef": {
+		"prefix": ["fref"],
+		"body": [
+			"const Button = React.forwardRef((props, ref) => (<button ref={ref}> {props.children} </button>))",
+			"",
+			"// You can now get a ref directly to the DOM button:",
+			"const ref = React.createRef()",
+			"<Button ref={ref}>Click me!</Button>"
+		],
+		"description": "Forward ref statement used inside component\n"
+	}
 }

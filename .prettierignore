@@ -1,0 +1,17 @@
+node_modules/
+snippets/
+
+.DS_Store
+.editorconfig
+.gitignore
+.history
+.prettierignore
+
+**/*.png
+**/*.xd
+
+LICENSE
+package.json
+package-lock.json
+yarn-error.log
+yarn.lock

@@ -2,347 +2,265 @@
 
 ## Snippets
 
-Note: All the snippets include the final semicolon `;`
-
 - Import
 - Functional Component
-- Class Component
-- Class Pure Component
-- Function Memo Component
+- Memo Component
 - Hooks
-- State/Props
+- Class Component
+- PureComponent
+- this.state/this.props
 - Lifecycle
 - Ref/Context
+- React Router v5
+- React Router v6
 - PropTypes
-- React Router
+
 
 ### Import
 
-| prefix   | body                                                                                                 | description                                              |
-| -------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `imr`    | <code>"import React from 'react';"</code>                                                            | **im**port **R**eact                                     |
-| `imrus`  | <code>"import React, { useState } from 'react';"</code>                                              | **im**port **R**eact **us**eState                        |
-| `imruu`  | <code>"import React, { useState, useEffect } from 'react';"</code>                                   | **im**port **R**eact **u**seState **u**seEffect          |
-| `imrd`   | <code>"import ReactDOM from 'react-dom';"</code>                                                     | **im**port **R**eact**D**OM                              |
-| `imrc`   | <code>"import React, { Component } from 'react';"</code>                                             | **im**port **R**eact **C**omponent                       |
-| `imrcp`  | <code>"import React, { Component } from 'react'",<br>"import PropTypes from 'prop-types'"</code>     | **im**port **R**eact **C**omponent **P**ropTypes         |
-| `imrpc`  | <code>"import React, { PureComponent } from 'react'"</code>                                          | **im**port **R**eact **P**ure**C**omponent               |
-| `imrpcp` | <code>"import React, { PureComponent } from 'react'",<br>"import PropTypes from 'prop-types'"</code> | **im**port **R**eact **P**ure**C**omponent **P**ropTypes |
-| `imrm`   | <code>"import React, { memo } from 'react'"</code>                                                   | **im**port **R**eact **m**emo                            |
-| `imrmp`  | <code>"import React, { memo } from 'react'",<br>"import PropTypes from 'prop-types'"</code>          | **im**port **R**eact **m**emo **P**ropTypes              |
-| `impt`   | <code>"import PropTypes from 'prop-types'"</code>                                                    | **im**port **P**rop**T**ypes                             |
+| prefix    | body                                                                                             | description                                                  |
+|-----------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| `imr`     | <code>import React from 'react'</code>                                                           | **im**port **R**eact                                         |
+| `imrus`   | <code>import React, { useState } from 'react'</code>                                             | **im**port **R**eact **us**eState                            |
+| `imruu`   | <code>import React, { useState, useEffect } from 'react'</code>                                  | **im**port **R**eact **u**seState **u**seEffect              |
+| `imrd`    | <code>import ReactDOM from 'react-dom'</code>                                                    | **im**port **R**eact**D**OM                                  |
+| `imrc`    | <code>import React, { Component } from 'react'</code>                                            | **im**port **R**eact **C**omponent                           |
+| `imrcpt`  | <code>import React, { Component } from 'react',<br>import PropTypes from 'prop-types'</code>     | **im**port **R**eact **C**omponent **P**rop**T**ypes         |
+| `imrpc`   | <code>import React, { PureComponent } from 'react'</code>                                        | **im**port **R**eact **P**ure**C**omponent                   |
+| `imrpcpt` | <code>import React, { PureComponent } from 'react',<br>import PropTypes from 'prop-types'</code> | **im**port **R**eact **P**ure**C**omponent **P**rop**T**ypes |
+| `imrm`    | <code>import React, { memo } from 'react'</code>                                                 | **im**port **R**eact **m**emo                                |
+| `imrmpt`  | <code>import React, { memo } from 'react',<br>import PropTypes from 'prop-types'</code>          | **im**port **R**eact **m**emo **P**rop**T**ypes              |
+| `impt`    | <code>import PropTypes from 'prop-types'</code>                                                  | **im**port **P**rop**T**ypes                                 |
+
+
+### Class Component **State/Props**
+
+| prefix  | body                                             | description                                         |
+|---------|--------------------------------------------------|-----------------------------------------------------|
+| `dtp`   | `const { } = this.props`                         | **d**estruct **t**his.**p**rops                     |
+| `dts`   | `const { } = this.state`                         | **d**estruct **t**his.**s**tate                     |
+| `rst`   | `state = { }`                                    | **r**eact **st**ate                                 |
+| `tss`   | `this.setState({})`                              | **t**his.**s**et**S**tate with object               |
+| `tssfn` | `this.setState((state, props) => { return { }})` | **t**his.**s**et**S**tate with **f**u**n**ction     |
+| `tp`    | `this.props.propertyName`                        | **t**his.**p**rops property name                    |
+| `ts`    | `this.state.propertyName`                        | **t**his.**s**tate property name                    |
+| `bfn`   | `this.methodName = this.methodName.bind(this)`   | **b**ind a **f**u**n**ction to a component instance |
+
+
+### Class Component **Lifecycle** ⏳
+
+| prefix        | body                                                                                                                                                       |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `constructor` | <code><strong>constructor</strong>(props) { super(props); this.state = { }; this.handleEvent = this.handleEvent.bind(this) }</code>                        |
+| `cdm`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>M</strong>ount(){ }</code>                                                                     |
+| `cdu`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>U</strong>pdate(prevProps, prevState){ ... }</code>                                            |
+| `cwu`         | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>Un</strong>mount(){ }</code>                                                                  |
+| `gdsfp`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>P</strong>rops(nextProps, prevState){ }</code> |
+| `gdsfe`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>E</strong>rror(error){ }</code>                |
+| `gsbu`        | <code><strong>g</strong>et<strong>S</strong>napshot<strong>B</strong>efore<strong>U</strong>pdate(prevProps, prevState){ }</code>                          |
+| `scu`         | <code><strong>s</strong>hould<strong>C</strong>omponent<strong>U</strong>pdate(nextProps, nextState, nextContext){ }</code>                                |
+| `render`      | <code><strong>render</strong>(){ return <></> }</code>                                                                                                     |
+| `cwm`         | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>M</strong>ount(){ }                                                                   |
+| `cwrp`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>R</strong>eceive<strong>P</strong>rops(nextProps, nextContext){ }                     |
+| `cwup`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate(nextProps, nextState, nextContext){ }                                 |
+
+
+### Functional Component **Hooks**
+
+| prefix | body                                                                                | description                                      |
+|--------|-------------------------------------------------------------------------------------|--------------------------------------------------|
+| `us`   | `const [state, setState] = useState(initialState)`                                  | **R**eact **u**se**S**tate Hook                  |
+| `ue`   | `useEffect(() => { /* side effects */ }, []);`                                      | asynchronously, **R**eact **u**se**E**ffect Hook |
+| `uec`  | `useEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])`       | **u**se**E**ffect **C**leanup                    |
+| `uc`   | `const context = useContext(context)`                                               | **u**se**C**ontext                               |
+| `ur`   | `const [state, dispatch] = useReducer(reducer, initializerArg, initializer)`        | **u**se**R**educer                               |
+| `ucb`  | `let memoizedCallback = useCallback(() => { fn() }, [deps])`                        | **u**se**C**allback                              |
+| `um`   | `let memoizedValue = useMemo(() => {}, [deps])`                                     | **u**se**M**emo                                  |
+| `ure`  | `const ref = useRef(initialValue)`                                                  | **u**se**R**ef                                   |
+| `uih`  | `useImperativeHandle(ref, () => { handler }, [deps])`                               | **u**se**I**mperative**H**andle                  |
+| `udv`  | `useDebugValue(value)`                                                              | **u**se**D**ebug**V**alue                        |
+| `ule`  | `useLayoutEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])` | synchronously, **u**se**L**ayout**E**ffect       |
+
 
 ### Functional Component
 
-- `rfc`, Creates a **R**eact **F**unctional **C**omponent
+- `rfc` - Create **R**eact **F**unctional **C**omponent
+- `rfce` - Create **R**eact **F**unctional **C**omponent and **e**xport
+- `rfced` - Create **R**eact **F**unctional **C**omponent and **e**xport it by **d**efault
+- `rfcpt` - Create **R**eact **F**unctional **C**omponent with **P**rop**T**ypes
+- `rafc` - Create **R**eact **A**rrow **F**unction **C**omponent
+- `rafcpt` - Create **R**eact **A**rrow **F**unction **C**omponent with **P**rop**T**ypes
 
-```jsx
-function ReactComponent() {
-  return <div></div>;
-}
-
-export default ReactComponent;
-```
-
-- `rfcd`, Creates a **R**eact **F**unctional **C**omponent, **D**efault export
-
-```jsx javascript
-export default function ReactComponent() {
-  return <div></div>;
+```javascript
+// rfce  ↵
+export function FileNamePascalCase() {
+  return (
+    <></>
+  )
 }
 ```
 
-- `rfcp`, Creates a **R**eact **F**unctional **C**omponent with **P**ropTypes
+```javascript
+// rfcpt  ↵
+import React from 'react'
+import PropTypes from 'prop-types'
 
-```jsx javascript
-import React from 'react';
-import PropTypes from 'prop-types';
-
-function ReactComponent(props) {
-  return <div></div>;
+function FileNamePascalCase(props) {
+  return (
+    <>  </>
+  )
 }
 
-ReactComponent.propTypes = {};
+FileNamePascalCase.propTypes = {  }
 
-export default ReactComponent;
+export default FileNamePascalCase
 ```
 
-- `rafc`, Creates a **R**eact **A**rrow **F**unction **C**omponent
-
-```jsx javascript
-const ReactComponent = () => {
-  return <div></div>;
-};
-
-export default ReactComponent;
-```
-
-- `rafcp`, Creates a **R**eact **A**rrow **F**unction **C**omponent with **P**ropTypes
-
-```jsx javascript
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const ReactComponent = props => {
-  return <div></div>;
-};
-
-ReactComponent.propTypes = {};
-
-export default ReactComponent;
-```
-
-- `hoc`，**HOC** Component
-
-```jsx javascript
-import React from 'react';
-import PropTypes from 'prop-types';
-
-export default WrappedComponent => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
-
-  hocComponent.propTypes = {};
-
-  return hocComponent;
-};
-```
 
 ### Class Component
 
-- `rcc`, Create **R**eact **C**lass **c**omponent
+- `rcc` - Create **R**eact **C**lass **C**omponent and export it by default
+- `rccpt` - Create **R**eact **C**lass **C**omponent with **P**rop**T**ypes and export it by default
+- `rccl` - Create **R**eact **C**lass **C**omponent (all **L**ifecycle)
 
-```jsx javascript
-class ReactComponent extends Component {
+```javascript
+// rcc  ↵
+import React, { Component } from 'react'
+
+export default class FileNamePascalCase extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = {};
+    this.state = {  }
+
+    this.handleEvent = this.handleEvent.bind(this)
   }
+
+  componentDidMount() {  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
+
+  componentWillUnmount() {  }
+
+  // Prototype methods, Bind in Constructor (ES2015)
+  handleEvent() {}
+
+  // Class Properties (Stage 3 Proposal)
+  handler = () => { this.setState() }
 
   render() {
-    return <div></div>;
-  }
-}
-
-export default ReactComponent;
-```
-
-- `rccd`, Create **R**eact **C**lass **C**ompoment, **D**efault export
-
-```jsx javascript
-export default class ReactComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  render() {
-    return <div></div>;
+    return (
+      <></>
+    )
   }
 }
 ```
 
-- `rccl`, Create React class component(lifecycle)
-
-```jsx javascript
-import React, { Component } from 'react';
-
-class ReactComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  }
-
-  static getDerivedStateFromProps() { } // rarely used
-
-  shouldComponentUpdate(nextProps, nextState) { } // rarely used
-
-  render() { return (); }
-
-  componentDidMount() { }
-
-  getSnapshotBeforeUpdate(prevProps, prevState) { } // rarely used
-
-  componentDidUpdate(prevProps, prevState, snapshot) { }
-
-  componentWillUnmount() { }
-
-  static getDerivedStateFromError(error) { }
-
-  componentDidCatch(error, info) { }
-}
-
-export default ReactComponent
-```
-
-- `rccp`, Create **R**eact **C**lass **c**omponent with **P**ropTypes
-
-```jsx javascript
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-class ReactComponent extends Component {
-  static propTypes = {};
-
-  render() {
-    return <div></div>;
-  }
-}
-
-export default ReactComponent;
-```
-
-- `rccpd`, Create **R**eact **C**lass **C**ompoment with **P**ropTypes, **D**efault export
-
-```jsx javascript
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-export default class ReactComponent extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
-
-  render() {
-    return <div></div>;
-  }
-}
-```
 
 ### Class Pure Component
 
-- `rcpcd`, Create **R**eact **C**lass **P**ure**C**omponent, **D**efault export
+- `rpc` - Create <code><strong>R</strong>eact.<strong>P</strong>ure<strong>C</strong>omponent</code> and export it by default, it's works with class-based components
+- `rpcpt` - Create <code><strong>R</strong>eact.<strong>P</strong>ure<strong>C</strong>omponent</code> with **P**rop**T**ypes and export it by default, it's works with class-based components
 
-```jsx javascript
-import React, { PureComponent } from 'react';
+```javascript
+// rpc  ↵
+import React, { PureComponent } from 'react'
 
-export default class ReactComponent extends PureComponent {
+export default class FileNamePascalCase extends PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {  }
+
+    this.handleEvent = this.handleEvent.bind(this)
+  }
+
+  componentDidMount() {  }
+
   render() {
-    return <div></div>;
+    return (
+      <></>
+    )
   }
 }
 ```
 
-- `rcpc`, Create **R**eact **C**lass **P**ure**C**omponent
-
-```jsx javascript
-import React, { PureComponent } from 'react';
-
-class ReactComponent extends PureComponent {
-  render() {
-    return <div></div>;
-  }
-}
-
-export default ReactComponent;
-```
-
-- `rcpcpd`, Create **R**eact **C**lass **P**ure**C**omponent with **P**ropTypes, **D**efault export
-
-```jsx javascript
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-
-export default class ReactComponent extends PureComponent {
-  static propTypes = {};
-
-  render() {
-    return <div></div>;
-  }
-}
-```
 
 ### Function Memo Component
 
-- `rmcd`, Create **R**eact **F**unction **M**emo **C**omponent, **D**efault export
+- `rmc` - Create <strong>R</strong>eact.<strong>m</strong>emo <strong>C</strong>omponent and export it by default, it's works with functional components
+- `rmcpt` - Create <strong>R</strong>eact.<strong>m</strong>emo <strong>C</strong>omponent with **P**rop**T**ypes and export it by default, it's works with functional components
 
-```jsx javascript
-import React, { memo } from 'react';
+```javascript
+// rmc  ↵
+import React, { memo } from 'react'
 
-export default memo(function ReactComponent() {
-  return <div></div>;
-});
+export default memo(function FileNamePascalCase(props) {
+  return (
+    <></>
+  )
+})
 ```
 
-- `rmcp`, Create **R**eact **F**unction **M**emo **C**omponent with **P**ropTypes
-
-```jsx javascript
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
-
-const ReactComponent = memo(function ReactComponent(props) {
-  return <div></div>;
-});
-
-ReactComponent.propTypes = {};
-
-export default ReactComponent;
-```
-
-### Hooks
-
-| prefix                         | body                                                                | description                                      |
-| ------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------ |
-| [`useState`, `us`, `rus`]      | `const [state, setState] = useState(initialState)`                  | **R**eact **u**se**S**tate Hook                  |
-| [`useEffect`, `ue`, `rue`]     | `useEffect(() => { }, []);`                                         | **R**eact **u**se**E**ffect Hook Without Cleanup |
-| `uec`                          | `useEffect(() => { return () => { cleanUpEffect }; }, []);`         | **u**se**E**ffect **C**leanup                    |
-| [`useContext`, `uc`]           | `const context = useContext(contextValue)`                          |                                                  |
-| [`useReducer`, `ur`]           | `const [state, dispatch] = useReducer(reducer, initialState, init)` |                                                  |
-| [`useCallback`, `ucb`]         | `useCallback( () => { callback }, [input], )`                       |                                                  |
-| [`useMemo`, `um`]              | `useMemo(() => function, input)`                                    |                                                  |
-| [`useRef`, `ure`]              | `const ref = useRef(initialValue)`                                  |                                                  |
-| [`useImperativeHandle`, `uih`] | `useImperativeHandle( ref, () => { handler }, [input], )`           |                                                  |
-| [`useDebugValue`, `udv`]       | `useDebugValue(value)`                                              |                                                  |
-| [`useLayoutEffect`, `ule`]     | `useLayoutEffect(() => { return () => { effect }, [input] })`       |                                                  |
-
-### State/Props
-
-| prefix      | body                                                    | description                               |
-| ----------- | ------------------------------------------------------- | ----------------------------------------- |
-| `cp`        | `const { } = this.props`                                | **c**onst destruct**P**rops               |
-| `cs`        | `const { } = this.state`                                | **c**onst destruct**S**tate               |
-| `rconst`    | `constructor(props) { super(props); this.state = { } }` | **r**eact **c**lass c**onst**ructor       |
-| `rst`       | `state = { }`                                           | **r**eact **st**ate                       |
-| `sst`       | `this.setState({})`                                     | Component **s**et **st**ate with object   |
-| `sstf`      | `this.setState((state, props) => { return { }})`        | Component **s**et **st**ate with **f**unc |
-| `props`     | `this.props.`                                           | Component **props**                       |
-| `state`     | `this.state.`                                           | Component **state**                       |
-| `tmb`, `bd` | `this.methodName = this.methodName.bind(this)`          | **t**his.**m**ethod.**b**ind              |
-
-### Lifecycle
-
-| prefix   | body                                                                                                                                            |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cwm`    | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>M</strong>ount()</code>                                                            |
-| `cwmu`   | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>M</strong>ount() // <strong>U</strong>NSAFE</code>                         |
-| `cdm`    | <code><strong>c</strong>omponent<strong>D</strong>id<strong>M</strong>ount()</code>                                                             |
-| `cwrp`   | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>R</strong>eceive<strong>P</strong>rops()</code>                                    |
-| `cwrpu`  | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>R</strong>eceive<strong>P</strong>rops() // <strong>U</strong>NSAFE</code> |
-| `scu`    | <code><strong>s</strong>hould<strong>C</strong>omponent<strong>U</strong>pdate()</code>                                                         |
-| `cwu`    | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate()</code>                                                           |
-| `cwuu`   | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate() // <strong>U</strong>NSAFE</code>                        |
-| `cdu`    | <code><strong>c</strong>omponent<strong>D</strong>id<strong>U</strong>pdate()</code>                                                            |
-| `cwun`   | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>Un</strong>mount()</code>                                                          |
-| `gdsfp`  | <code><strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>P</strong>rops()</code>                    |
-| `gsbu`   | <code><strong>g</strong>et<strong>S</strong>napshot<strong>B</strong>efore<strong>U</strong>pdate()</code>                                      |
-| `render` | <code><strong>render</strong>()</code>                                                                                                          |
 
 ### Ref/Context
 
-| prefix    | body                                        | description                                         |
-| --------- | ------------------------------------------- | --------------------------------------------------- |
-| `ref`     | `this.refName = React.createRef()`          | Create **ref** statement used inside constructor    |
-| `reff`    | `const ref = React.createRef()`             | **F**orward **ref** statement used inside component |
-| `context` | `const contextName = React.createContext()` | Create React **context**                            |
+| prefix    | body                                                    | description                                         |
+|-----------|---------------------------------------------------------|-----------------------------------------------------|
+| `ref`     | `this.refName = React.createRef()`                      | Create **ref** statement used inside constructor    |
+| `fref`    | `const ref = React.forwardRef((props, ref) => ( ... ))` | **F**orward **ref** statement used inside component |
+| `context` | `const contextName = React.createContext()`             | Create React **context**                            |
+
+
+### React Router V6
+
+| prefix        | body                                                                                     | description                                                          |
+|---------------|------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| `imrrr`       | `import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'`              | **im**port React **R**outer `<BrowserRouter>`, `<Routes>`, `<Route>` |
+| `imbr`        | `import { BrowserRouter as Router } from 'react-router-dom'`                             | **im**port React **R**outer `<BrowserRouter>`                        |
+| `imhr`        | `import { HashRouter as Router } from 'react-router-dom'`                                | **im**port React **R**outer `<HashRouter>`                           |
+| `immr`        | `import { MemoryRouter as Router } from 'react-router-dom'`                              | **im**port React **R**outer `<MemoryRouter>`                         |
+| `imnr`        | `import { NativeRouter as Router } from 'react-router-dom'`                              | **im**port React **R**outer `<NativeRouter>`                         |
+| `imrr`        | `import { Routes, Route } from 'react-router-dom'`                                       | **im**port React **R**outer `<Routes>`, `<Route>`                    |
+| `imrl`        | `import { Link } from 'react-router-dom'`                                                | **im**port React **R**outer `<Link>`                                 |
+| `imrnl`       | `import { NavLink } from 'react-router-dom'`                                             | **im**port React **R**outer `<NavLink>`                              |
+| `imrn`        | `import { Navigate } from 'react-router-dom'`                                            | **im**port React **R**outer `<Navigate>`                             |
+| `imro`        | `import { Outlet } from 'react-router-dom'`                                              | **im**port React **R**outer `<Outlet>`                               |
+| `imrul`       | `import { useLocation } from 'react-router-dom'`                                         | **im**port React **R**outer **u**se**L**ocation                      |
+| `imrun`       | `import { useNavigate } from 'react-router-dom'`                                         | **im**port React **R**outer **u**se**N**avigate                      |
+| `imrup`       | `import { useParams } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**P**arams                        |
+| `imrupr`      | `import { usePrompt } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**P**rompt                        |
+| `imrur`       | `import { useRoutes } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**R**outes                        |
+| `imrusp`      | `import { useSearchParams } from 'react-router-dom'`                                     | **im**port React **R**outer **u**se**S**earch**P**arams              |
+| `rl`, `link`  | `<Link to={path}>{name}</Link>`                                                          | React **R**outer `<Link>`                                            |
+| `rnl`, `nl`   | `<NavLink to={path} end>{name}</NavLink>`                                                | React **R**outer `<NavLink>`                                         |
+| `rr`, `route` | `<Route path={componentConst.route} element={<Component />} />`                          | React **R**outer `<Route>`                                           |
+| `rul`         | `let location = useLocation();` ... `handleNavActionStyle(location);`                    | React **R**outer **u**se**L**ocation                                 |
+| `run`         | `let navigate = useNavigate();` ...  `navigate(path, { replace: true })`                 | React **R**outer **u**se**N**avigate                                 |
+| `rup`         | `const {id} = useParams()`                                                               | React **R**outer **u**se**P**arams                                   |
+| `rupr`        | `usePrompt('Are you sure you want to leave?', formData != null)}`                        | React **R**outer **u**se**P**rompt                                   |
+| `rur`         | `let routes = useRoutes([ {path, element, children?} ])`                                 | React **R**outer **u**se**R**outes                                   |
+| `rusp`        | `let [searchParams, setSearchParams] = useSearchParams()`, ... `setSearchParams(params)` | React **R**outer **u**se**S**earch**P**arams                         |
+
+### React Router V5
+| prefix       | body                                                                                                       | description                                                          |
+|--------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| `imrrsr`     | `import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'`                                | **im**port React **R**outer `<BrowserRouter>`, `<Switch>`, `<Route>` |
+| `imrsr`      | `import { Switch, Route } from 'react-router-dom'`                                                         | **im**port React **R**outer `<Switch>`, `<Route>`                    |
+| `imrwr`      | `import { withRouter } from 'react-router'`                                                                | **im**port React **R**outer **w**ith**R**outer                       |
+| `imruh`      | `import { useHistory } from 'react-router-dom'`                                                            | **im**port React **R**outer **u**se**H**istory                       |
+| `imrurm`     | `import { useRouteMatch } from 'react-router-dom'`                                                         | **im**port React **R**outer **u**se**R**outeMatch                    |
+| `rsr`        | `<Switch><Route path="path"> ... </Route></Switch>`                                                        | React **R**outer `<Switch>`, `<Route>`                               |
+| `rr(legacy)` | `<Route path={componentConst.route} element={<Component />} />`                                            | React **R**outer `<Route>`                                           |
+| `redirect`   | `<Redirect from="/users/:id" to="/users/profile/:id" />`                                                   | React **R**outer `<Redirect>`                                        |
+| `ruh`        | `const history = useHistory() ... history.push("path")`                                                    | React **R**outer **u**se**H**istory                                  |
+| `rurm`       | <code>const match = useRouteMatch() ...  &lt;Link to={`${match.url}/me`}&gt;My Profile&lt;/Link&gt;</code> | React **R**outer **u**se**R**outeMatch                               |
+
 
 ### PropTypes
 
 | prefix   | body                                                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------|
 | `pta`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray,</code>                                                      |
 | `ptar`   | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>a</strong>rray.is<strong>R</strong>equired,</code>                          |
 | `ptb`    | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>b</strong>ool,</code>                                                       |
@@ -374,28 +292,12 @@ export default ReactComponent;
 | `ptypes` | <code>static <strong>p</strong>rop<strong>Types</strong> = {}</code>                                                                  |
 | `ptany`  | <code><strong>P</strong>rop<strong>T</strong>ypes.<strong>any</strong>,</code>                                                        |
 
-### React Router
 
-| prefix            | body                                                                         | description                                                        |
-| ----------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `imrrsr`          | `import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';` | **im**port React-**R**outer Browser**R**outer/**S**witch/**R**oute |
-| `imrsr`           | `import { Switch, Route } from 'react-router-dom';`                          | **im**port React-**R**outer **S**witch & **R**oute                 |
-| `imrl`            | `import { Link } from 'react-router-dom';`                                   | **im**port React-**R**outer **L**ink                               |
-| `imrnl`           | `import { NavLink } from 'react-router-dom';`                                | **im**port React-**R**outer **N**avLink                            |
-| `imrwr`           | `import { withRouter } from "react-router";`                                 | **im**port React-**R**outer **w**ith**R**outer                     |
-| `imruh`           | `import { useHistory } from 'react-router-dom';`                             | **im**port React-**R**outer **u**se**H**istory                     |
-| `ruh`             | `const history = useHistory();`                                              | React-**R**outer **u**se**H**istory                                |
-| `imrul`           | `import { useLocation } from 'react-router-dom';`                            | **im**port React-**R**outer **u**se**L**ocation                    |
-| `rul`             | `const location = useLocation();`                                            | React-**R**outer **u**se**L**ocation                               |
-| `imrup`           | `import { useParams } from 'react-router-dom';`                              | **im**port React-**R**outer **u**se**P**arams                      |
-| `rup`             | `const id = useParams();`                                                    | React-**R**outer **u**se**P**arams                                 |
-| `imrurm`          | `import { useRouteMatch } from 'react-router-dom';`                          | **im**port React-**R**outer **u**se**R**oute**M**atch              |
-| `rurm`            | `const match = useRouteMatch();`                                             | React-**R**outer **u**se**R**oute**M**atch                         |
-| `rr`              | `<Route ...><Component /></Route>`                                           | React-**R**outer **R**oute                                         |
-| `rsr`             | `<Switch><Route ...><Component /></Route>`                                   | React-**R**outer **S**witch&**R**oute                              |
-| `rl`, `link`      | `<Link ...>...`                                                                  | React-**R**outer **L**ink                                          |
-| `rnl`, `navlink`  | `<NavLink ...>...`                                                               | React-**R**outer **N**avLink                                       |
-| `rre`, `redirect` | `<Switch><Redirect ... /><Route>...`                                         | React-**R**outer **Re**direct                                      |
+### Chore
+
+- `hoc` - HOC Component
+
+🤞
 
 ## License
 
