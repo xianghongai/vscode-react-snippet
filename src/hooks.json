@@ -1,16 +1,16 @@
 {
 	"useState": {
-		"prefix": ["us"],
+		"prefix": ["us", "hooks.useState"],
 		"body": ["const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"],
-		"description": "State Hook\n"
+		"description": "useState, Returns a stateful value, and a function to update it.\n"
 	},
 	"useEffect Without Cleanup": {
-		"prefix": ["ue"],
+		"prefix": ["ue", "hooks.useEffect"],
 		"body": ["useEffect(() => {", "\t$1", "}, [])"],
-		"description": "Effect Hook\n"
+		"description": "useEffect, Accepts a function that contains imperative, possibly effectful code.\n"
 	},
 	"useEffect Cleanup": {
-		"prefix": ["uec"],
+		"prefix": ["uec", "hooks.useEffect.Cleanup"],
 		"body": [
 			"useEffect(() => {",
 			"\t// side effects",
@@ -22,33 +22,35 @@
 			"\t}",
 			"}, [])"
 		],
-		"description": "Effects Cleanup\n"
+		"description": "useEffect, return a clean-up function.\n"
 	},
 	"useContext": {
-		"prefix": ["uc"],
-		"body": ["const ${1:context} = useContext(${2:context})"]
+		"prefix": ["uc", "hooks.useContext"],
+		"body": ["const ${1:context} = useContext(${2:context})"],
+		"description": "useContext, Accepts a context object (the value returned from `React.createContext`) and returns the current context value for that context. \n"
 	},
 	"useReducer": {
-		"prefix": ["ur"],
-		"body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initializerArg})"]
+		"prefix": ["ur", "hooks.useReducer"],
+		"body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initializerArg})"],
+		"description": "useReducer, An alternative to `useState`. Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method.\n"
 	},
 	"useCallback": {
-		"prefix": ["ucb"],
+		"prefix": ["ucb", "hooks.useCallback"],
 		"body": ["let ${1:memoizedCallback} = useCallback(() => {", "\t${3:fn($2)}", "}, [${2:deps}])"],
-		"description": "Returns a memoized callback.\n"
+		"description": "useCallback, Returns a memoized callback.\n"
 	},
 	"useMemo": {
-		"prefix": ["um"],
+		"prefix": ["um", "hooks.useMemo"],
 		"body": ["let ${1:memoizedValue} = useMemo(() => ${3:computeExpensiveValue}($2), [${2:deps}])"],
-		"description": "Returns a memoized value.\n"
+		"description": "useMemo, Returns a memoized value.\n"
 	},
 	"useRef": {
-		"prefix": ["ure"],
+		"prefix": ["ure", "hooks.useRef"],
 		"body": ["const ${1:ref} = useRef(${2:initialValue})"],
-		"description": "`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.\n"
+		"description": "useRef, returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.\n"
 	},
 	"useImperativeHandle": {
-		"prefix": ["uih"],
+		"prefix": ["uih", "hooks.useImperativeHandle"],
 		"body": [
 			"// exposed components",
 			"import React, { useRef, useImperativeHandle, forwardRef } from 'react'",
@@ -91,15 +93,15 @@
 			"  )",
 			"}"
 		],
-		"description": "`useImperativeHandle` customizes the instance value that is exposed to parent components when using `ref`.\n"
+		"description": "useImperativeHandle, customizes the instance value that is exposed to parent components when using `ref`.\n"
 	},
 	"useDebugValue": {
-		"prefix": ["udv"],
+		"prefix": ["udv", "hooks.useDebugValue"],
 		"body": ["useDebugValue(${1:value})"],
-		"description": "`useDebugValue` can be used to display a label for custom hooks in React DevTools.\n"
+		"description": "useDebugValue, can be used to display a label for custom hooks in React DevTools.\n"
 	},
 	"useLayoutEffect": {
-		"prefix": ["ule"],
+		"prefix": ["ule", "hooks.useLayoutEffect"],
 		"body": [
 			"useLayoutEffect(() => {",
 			"\t// side effects",
@@ -111,6 +113,6 @@
 			"\t}",
 			"}, [])"
 		],
-		"description": "Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.\n"
+		"description": "useLayoutEffect, Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.\n"
 	}
 }

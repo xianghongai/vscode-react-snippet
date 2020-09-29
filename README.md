@@ -1,22 +1,27 @@
 # React Snippet (Visual Studio Code)
 
+![Screenshot](https://raw.githubusercontent.com/caringrun/assets/master/vscode-react-snippet.gif)
+
 ## Snippets
 
 - Import
+- Class Component - State/Props
+- Class Component - Lifecycle
+- Functional Component - Hooks
 - Functional Component
-- Memo Component
-- Hooks
 - Class Component
-- PureComponent
-- this.state/this.props
-- Lifecycle
+- Class Pure Component
+- Function Memo Component
 - Ref/Context
-- React Router v5
-- React Router v6
+- React Router V6
+- React Router V5
 - PropTypes
+- Chore
+
+The component name will be named in camel case based on the file name.
 
 
-### Import
+### Import 🦢
 
 | prefix    | body                                                                                             | description                                                  |
 |-----------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -33,7 +38,7 @@
 | `impt`    | <code>import PropTypes from 'prop-types'</code>                                                  | **im**port **P**rop**T**ypes                                 |
 
 
-### Class Component **State/Props**
+### Class Component **State/Props** 🐟
 
 | prefix  | body                                             | description                                         |
 |---------|--------------------------------------------------|-----------------------------------------------------|
@@ -47,7 +52,7 @@
 | `bfn`   | `this.methodName = this.methodName.bind(this)`   | **b**ind a **f**u**n**ction to a component instance |
 
 
-### Class Component **Lifecycle** ⏳
+### Class Component **Lifecycle** 🐠
 
 | prefix        | body                                                                                                                                                       |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -65,7 +70,7 @@
 | `cwup`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate(nextProps, nextState, nextContext){ }                                 |
 
 
-### Functional Component **Hooks**
+### Functional Component **Hooks** 🦋
 
 | prefix | body                                                                                | description                                |
 |--------|-------------------------------------------------------------------------------------|--------------------------------------------|
@@ -82,14 +87,12 @@
 | `ule`  | `useLayoutEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])` | synchronously, **u**se**L**ayout**E**ffect |
 
 
-### Functional Component
+### Functional Component 🌿
 
 - `rfc` - Create **R**eact **F**unctional **C**omponent
 - `rfce` - Create **R**eact **F**unctional **C**omponent and **e**xport
 - `rfced` - Create **R**eact **F**unctional **C**omponent and **e**xport it by **d**efault
 - `rfcpt` - Create **R**eact **F**unctional **C**omponent with **P**rop**T**ypes
-- `rafc` - Create **R**eact **A**rrow **F**unction **C**omponent
-- `rafcpt` - Create **R**eact **A**rrow **F**unction **C**omponent with **P**rop**T**ypes
 
 ```javascript
 // rfce  ↵
@@ -117,7 +120,7 @@ export default FileNamePascalCase
 ```
 
 
-### Class Component
+### Class Component 🥀
 
 - `rcc` - Create **R**eact **C**lass **C**omponent and export it by default
 - `rccpt` - Create **R**eact **C**lass **C**omponent with **P**rop**T**ypes and export it by default
@@ -157,7 +160,7 @@ export default class FileNamePascalCase extends Component {
 ```
 
 
-### Class Pure Component
+### Class Pure Component 🐙
 
 - `rpc` - Create <code><strong>R</strong>eact.<strong>P</strong>ure<strong>C</strong>omponent</code> and export it by default, it's works with class-based components
 - `rpcpt` - Create <code><strong>R</strong>eact.<strong>P</strong>ure<strong>C</strong>omponent</code> with **P**rop**T**ypes and export it by default, it's works with class-based components
@@ -186,7 +189,7 @@ export default class FileNamePascalCase extends PureComponent {
 ```
 
 
-### Function Memo Component
+### Function Memo Component 🌵
 
 - `rmc` - Create <strong>R</strong>eact.<strong>m</strong>emo <strong>C</strong>omponent and export it by default, it's works with functional components
 - `rmcpt` - Create <strong>R</strong>eact.<strong>m</strong>emo <strong>C</strong>omponent with **P**rop**T**ypes and export it by default, it's works with functional components
@@ -203,7 +206,7 @@ export default memo(function FileNamePascalCase(props) {
 ```
 
 
-### Ref/Context
+### Ref/Context 🌾
 
 | prefix    | body                                                    | description                                         |
 |-----------|---------------------------------------------------------|-----------------------------------------------------|
@@ -212,7 +215,7 @@ export default memo(function FileNamePascalCase(props) {
 | `context` | `const contextName = React.createContext()`             | Create React **context**                            |
 
 
-### React Router V6
+### React Router V6 ✨
 
 | prefix        | body                                                                                     | description                                                          |
 |---------------|------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -242,7 +245,7 @@ export default memo(function FileNamePascalCase(props) {
 | `rur`         | `let routes = useRoutes([ {path, element, children?} ])`                                 | React **R**outer **u**se**R**outes                                   |
 | `rusp`        | `let [searchParams, setSearchParams] = useSearchParams()`, ... `setSearchParams(params)` | React **R**outer **u**se**S**earch**P**arams                         |
 
-### React Router V5
+### React Router V5 🎋
 | prefix       | body                                                                                                       | description                                                          |
 |--------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | `imrrsr`     | `import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'`                                | **im**port React **R**outer `<BrowserRouter>`, `<Switch>`, `<Route>` |
@@ -257,7 +260,7 @@ export default memo(function FileNamePascalCase(props) {
 | `rurm`       | <code>const match = useRouteMatch() ...  &lt;Link to={`${match.url}/me`}&gt;My Profile&lt;/Link&gt;</code> | React **R**outer **u**se**R**outeMatch                               |
 
 
-### PropTypes
+### PropTypes 🍂
 
 | prefix                    | body                                                                                     |
 |---------------------------|------------------------------------------------------------------------------------------|

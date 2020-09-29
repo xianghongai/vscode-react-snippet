@@ -4,7 +4,7 @@
   "displayName": "React Snippet",
   "description": "Code snippets for React",
   "icon": "art/icon.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "galleryBanner": {
     "color": "#ffffff",
     "theme": "dark"

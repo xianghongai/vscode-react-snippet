@@ -2,10 +2,12 @@
 	"React Functional Component": {
 		"prefix": ["rfc"],
 		"body": [
-			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+			"\t$0",
+			"",
 			"\treturn (",
 			"\t\t<>",
-			"\t\t\t$0",
+			"\t\t\t",
 			"\t\t</>",
 			"\t)",
 			"}",
@@ -16,10 +18,14 @@
 	"React Functional Component and export": {
 		"prefix": ["rfce"],
 		"body": [
-			"export function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"import React from 'react'",
+			"",
+			"export function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+			"\t$0",
+			"",
 			"\treturn (",
 			"\t\t<>",
-			"\t\t\t$0",
+			"\t\t\t",
 			"\t\t</>",
 			"\t)",
 			"}",
@@ -32,10 +38,12 @@
 		"body": [
 			"import React from 'react'",
 			"",
-			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}() {",
+			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+			"\t$0",
+			"",
 			"\treturn (",
 			"\t\t<>",
-			"\t\t\t$0",
+			"\t\t\t",
 			"\t\t</>",
 			"\t)",
 			"}",
@@ -65,42 +73,5 @@
 			""
 		],
 		"description": "Creates a React Functional Component with PropTypes\n"
-	},
-	"React Arrow Function Component": {
-		"prefix": ["rafc"],
-		"body": [
-			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = (${2:props}) => {",
-			"\treturn (",
-			"\t\t<>",
-			"\t\t\t$0",
-			"\t\t</>",
-			"\t)",
-			"}",
-			""
-		],
-		"description": "Creates a React Arrow Function Component\n"
-	},
-	"React Arrow Function Component with PropTypes": {
-		"prefix": ["rafcpt"],
-		"body": [
-			"import React from 'react'",
-			"import PropTypes from 'prop-types'",
-			"",
-			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = (${2:props}) => {",
-			"\treturn (",
-			"\t\t<>",
-			"\t\t\t$0",
-			"\t\t</>",
-			"\t)",
-			"}",
-			"",
-			"${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}.propTypes = {",
-			"\t",
-			"}",
-			"",
-			"export default ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}",
-			""
-		],
-		"description": "Creates a React Arrow Function Component with PropTypes\n"
 	}
 }
