@@ -1,7 +1,21 @@
 {
 	"createContext": {
 		"prefix": ["context"],
-		"body": ["const ${1:contextName} = React.createContext()", ""],
+		"body": [
+			"import { createContext, useContext } from 'react'",
+			"",
+			"const ${1:initialState} = {}",
+			"const ${2:AppContext} = createContext(${1})",
+			"const { Provider, Consumer } = ${2}",
+			"",
+			"export { ${2}, Provider, Consumer }",
+			"",
+			"export default function useAppContext() {",
+			"\tconst ${3:appValue} = useContext(${2})",
+			"\treturn ${3};",
+			"}",
+			""
+		],
 		"description": "Create React context\n"
 	}
 }

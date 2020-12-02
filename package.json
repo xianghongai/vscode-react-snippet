@@ -1,10 +1,10 @@
 {
   "name": "vscode-react-snippet",
   "publisher": "NicholasHsiang",
-  "displayName": "React Snippet",
+  "displayName": "React Snippets",
   "description": "Code snippets for React",
   "icon": "art/icon.png",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "galleryBanner": {
     "color": "#ffffff",
     "theme": "dark"
@@ -25,7 +25,10 @@
     "Snippets"
   ],
   "keywords": [
-    "React Snippet"
+    "React",
+    "Snippet",
+    "React Snippets",
+    "React Code Snippets"
   ],
   "contributes": {
     "snippets": [
