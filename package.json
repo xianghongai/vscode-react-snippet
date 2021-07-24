@@ -1,56 +1,60 @@
 {
-  "name": "vscode-react-snippet",
-  "publisher": "NicholasHsiang",
-  "displayName": "React Snippets",
-  "description": "Code snippets for React",
-  "icon": "art/icon.png",
-  "version": "0.0.6",
-  "galleryBanner": {
-    "color": "#ffffff",
-    "theme": "dark"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xianghongai/vscode-react-snippet/issues"
-  },
-  "homepage": "https://github.com/xianghongai/vscode-react-snippet/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
-  },
-  "engines": {
-    "vscode": "^0.12.x"
-  },
-  "categories": [
-    "Snippets"
-  ],
-  "keywords": [
-    "React",
-    "Snippet",
-    "React Snippets",
-    "React Code Snippets"
-  ],
-  "contributes": {
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/javascript.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/javascript.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/javascript.json"
-      }
-    ]
-  },
-  "scripts": {
-    "build": "node merge.js && vsce package",
-    "install": "yarn build && code --install-extension vscode-react-snippet-$npm_package_version.vsix"
-  },
-  "devDependencies": {
-    "glob": "^7.1.4"
-  }
+	"name": "vscode-react-snippet",
+	"publisher": "NicholasHsiang",
+	"displayName": "React Snippets",
+	"description": "Code snippets for React",
+	"icon": "art/icon.png",
+	"version": "0.0.6",
+	"galleryBanner": {
+		"color": "#ffffff",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/xianghongai/vscode-react-snippet/issues"
+	},
+	"homepage": "https://github.com/xianghongai/vscode-react-snippet/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
+	},
+	"engines": {
+		"vscode": "^0.12.x"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"React",
+		"Snippet",
+		"React Snippets",
+		"React Code Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/javascript.json"
+			}
+		]
+	},
+	"scripts": {
+		"prebuild": "node merge.js",
+		"build": "vsce package",
+		"prepublish": "npm run build",
+		"publish": "vsce publish",
+		"preinstall": "npm run build",
+		"install": "code --install-extension vscode-react-snippet-$npm_package_version.vsix"
+	},
+	"devDependencies": {
+		"glob": "^7.1.4"
+	}
 }
