@@ -1,0 +1,7 @@
+{
+  "useCallback": {
+		"prefix": ["ucb", "hooks.useCallback"],
+		"body": ["let ${1:memoizedCallback} = useCallback(() => {", "\t${3:fn($2)}", "}, [${2:deps}])"],
+		"description": "useCallback, Returns a memoized callback.\n"
+	}
+}

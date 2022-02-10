@@ -1,0 +1,7 @@
+{
+  "useContext": {
+		"prefix": ["uc", "hooks.useContext"],
+		"body": ["const ${1:featureContext} = useContext(${2:FeatureContext})"],
+		"description": "useContext, Accepts a context object (the value returned from `React.createContext`) and returns the current context value for that context. \n"
+	}
+}

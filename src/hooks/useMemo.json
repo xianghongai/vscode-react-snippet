@@ -1,0 +1,7 @@
+{
+  "useMemo": {
+		"prefix": ["um", "hooks.useMemo"],
+		"body": ["let ${1:memoizedValue} = useMemo(() => ${3:computeExpensiveValue}($2), [${2:deps}])"],
+		"description": "useMemo, Returns a memoized value.\n"
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "useRef": {
+		"prefix": ["ure", "hooks.useRef"],
+		"body": ["const ${1:ref} = useRef(${2:initialValue})"],
+		"description": "useRef, returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.\n"
+	}
+}
