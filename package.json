@@ -50,9 +50,7 @@
 		"prebuild": "node merge.js",
 		"build": "vsce package",
 		"prepublish": "npm run build",
-		"publish": "vsce publish",
-		"preinstall": "npm run build",
-		"install": "code --install-extension vscode-react-snippet-$npm_package_version.vsix"
+		"publish": "vsce publish"
 	},
 	"devDependencies": {
 		"glob": "^7.1.4"
