@@ -22,6 +22,14 @@
 
 ![Screenshot](https://raw.githubusercontent.com/caringrun/assets/master/vscode-react-snippet.gif)
 
+## Version
+
+The major corresponds to the official generation.
+
+## React Router
+
+If you need Router please install the separate [React Router Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-react-router-snippets) extension and choose the appropriate version..
+
 ## Snippets
 
 - Import
@@ -33,13 +41,8 @@
 - Class Pure Component
 - Function Memo Component
 - Ref/Context
-- React Router V6
-- React Router V5
 - PropTypes
 - Chore
-
-The component name will be named in camel case based on the file name.
-
 
 ### Import 🦢
 
@@ -234,52 +237,6 @@ export default memo(function FileNamePascalCase(props) {
 | `fref`    | `const ref = React.forwardRef((props, ref) => ( ... ))` | **F**orward **ref** statement used inside component |
 | `context` | `const contextName = React.createContext()`             | Create React **context**                            |
 
-
-### React Router V6 ✨
-
-| prefix        | body                                                                                     | description                                                          |
-|---------------|------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| `imrrr`       | `import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'`              | **im**port React **R**outer `<BrowserRouter>`, `<Routes>`, `<Route>` |
-| `imbr`        | `import { BrowserRouter as Router } from 'react-router-dom'`                             | **im**port React **R**outer `<BrowserRouter>`                        |
-| `imhr`        | `import { HashRouter as Router } from 'react-router-dom'`                                | **im**port React **R**outer `<HashRouter>`                           |
-| `immr`        | `import { MemoryRouter as Router } from 'react-router-dom'`                              | **im**port React **R**outer `<MemoryRouter>`                         |
-| `imnr`        | `import { NativeRouter as Router } from 'react-router-dom'`                              | **im**port React **R**outer `<NativeRouter>`                         |
-| `imrr`        | `import { Routes, Route } from 'react-router-dom'`                                       | **im**port React **R**outer `<Routes>`, `<Route>`                    |
-| `imrl`        | `import { Link } from 'react-router-dom'`                                                | **im**port React **R**outer `<Link>`                                 |
-| `imrnl`       | `import { NavLink } from 'react-router-dom'`                                             | **im**port React **R**outer `<NavLink>`                              |
-| `imrn`        | `import { Navigate } from 'react-router-dom'`                                            | **im**port React **R**outer `<Navigate>`                             |
-| `imro`        | `import { Outlet } from 'react-router-dom'`                                              | **im**port React **R**outer `<Outlet>`                               |
-| `imrul`       | `import { useLocation } from 'react-router-dom'`                                         | **im**port React **R**outer **u**se**L**ocation                      |
-| `imrun`       | `import { useNavigate } from 'react-router-dom'`                                         | **im**port React **R**outer **u**se**N**avigate                      |
-| `imrup`       | `import { useParams } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**P**arams                        |
-| `imrupr`      | `import { usePrompt } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**P**rompt                        |
-| `imrur`       | `import { useRoutes } from 'react-router-dom'`                                           | **im**port React **R**outer **u**se**R**outes                        |
-| `imrusp`      | `import { useSearchParams } from 'react-router-dom'`                                     | **im**port React **R**outer **u**se**S**earch**P**arams              |
-| `rl`, `link`  | `<Link to={path}>{name}</Link>`                                                          | React **R**outer `<Link>`                                            |
-| `rnl`, `nl`   | `<NavLink to={path} end>{name}</NavLink>`                                                | React **R**outer `<NavLink>`                                         |
-| `rr`, `route` | `<Route path={componentConst.route} element={<Component />} />`                          | React **R**outer `<Route>`                                           |
-| `rul`         | `let location = useLocation();` ... `handleNavActionStyle(location);`                    | React **R**outer **u**se**L**ocation                                 |
-| `run`         | `let navigate = useNavigate();` ...  `navigate(path, { replace: true })`                 | React **R**outer **u**se**N**avigate                                 |
-| `rup`         | `const {id} = useParams()`                                                               | React **R**outer **u**se**P**arams                                   |
-| `rupr`        | `usePrompt('Are you sure you want to leave?', formData != null)}`                        | React **R**outer **u**se**P**rompt                                   |
-| `rur`         | `let routes = useRoutes([ {path, element, children?} ])`                                 | React **R**outer **u**se**R**outes                                   |
-| `rusp`        | `let [searchParams, setSearchParams] = useSearchParams()`, ... `setSearchParams(params)` | React **R**outer **u**se**S**earch**P**arams                         |
-
-### React Router V5 🎋
-| prefix       | body                                                                                                       | description                                                          |
-|--------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| `imrrsr`     | `import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'`                                | **im**port React **R**outer `<BrowserRouter>`, `<Switch>`, `<Route>` |
-| `imrsr`      | `import { Switch, Route } from 'react-router-dom'`                                                         | **im**port React **R**outer `<Switch>`, `<Route>`                    |
-| `imrwr`      | `import { withRouter } from 'react-router'`                                                                | **im**port React **R**outer **w**ith**R**outer                       |
-| `imruh`      | `import { useHistory } from 'react-router-dom'`                                                            | **im**port React **R**outer **u**se**H**istory                       |
-| `imrurm`     | `import { useRouteMatch } from 'react-router-dom'`                                                         | **im**port React **R**outer **u**se**R**outeMatch                    |
-| `rsr`        | `<Switch><Route path="path"> ... </Route></Switch>`                                                        | React **R**outer `<Switch>`, `<Route>`                               |
-| `rr(legacy)` | `<Route path={componentConst.route} element={<Component />} />`                                            | React **R**outer `<Route>`                                           |
-| `redirect`   | `<Redirect from="/users/:id" to="/users/profile/:id" />`                                                   | React **R**outer `<Redirect>`                                        |
-| `ruh`        | `const history = useHistory() ... history.push("path")`                                                    | React **R**outer **u**se**H**istory                                  |
-| `rurm`       | <code>const match = useRouteMatch() ...  &lt;Link to={`${match.url}/me`}&gt;My Profile&lt;/Link&gt;</code> | React **R**outer **u**se**R**outeMatch                               |
-
-
 ### PropTypes 🍂
 
 | prefix                    | body                                                                                     |
@@ -336,7 +293,3 @@ export default memo(function FileNamePascalCase(props) {
 ## License
 
 MIT License
-
----
-
-TODO: redux, react-native, May be split into separate packages

@@ -1,0 +1,21 @@
+{
+	"React App": {
+		"prefix": "react",
+		"body": [
+			"import React from 'react';",
+			"import ReactDOM from 'react-dom';",
+			"import App from './App';",
+			"",
+			"ReactDOM.render(",
+			"\t<React.StrictMode>",
+			"\t\t<Router>",
+			"\t\t\t<App />",
+			"\t\t</Router>,",
+			"\t</React.StrictMode>,",
+			"\tdocument.getElementById('root')",
+			");",
+			""
+		],
+		"description": "React App"
+	}
+}

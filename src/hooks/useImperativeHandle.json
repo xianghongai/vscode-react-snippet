@@ -1,6 +1,6 @@
 {
-  "useImperativeHandle": {
-		"prefix": ["uih", "hooks.useImperativeHandle"],
+	"useImperativeHandle": {
+		"prefix": ["uih", "useImperativeHandle", "hooks.useImperativeHandle"],
 		"body": [
 			"// exposed components",
 			"import React, { useRef, useImperativeHandle, forwardRef } from 'react'",
@@ -43,6 +43,6 @@
 			"\t)",
 			"}"
 		],
-		"description": "useImperativeHandle, customizes the instance value that is exposed to parent components when using `ref`.\n"
+		"description": "`useImperativeHandle()`, customizes the instance value that is exposed to parent components when using `ref`.\n"
 	}
 }

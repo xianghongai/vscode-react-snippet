@@ -1,7 +1,9 @@
 {
-  "useReducer": {
-		"prefix": ["ur", "hooks.useReducer"],
-		"body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initializerArg})"],
-		"description": "useReducer, An alternative to `useState`. Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method.\n"
+	"useReducer": {
+		"prefix": ["ur", "useReducer", "hooks.useReducer"],
+		"body": [
+			"const [state, dispatch] = useReducer(${1:reducer}, ${2:initializerArg})"
+		],
+		"description": "`useReducer()`, An alternative to `useState`. Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method.\n"
 	}
 }
