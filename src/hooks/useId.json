@@ -1,0 +1,7 @@
+{
+	"useId": {
+		"prefix": ["uid", "useId", "hooks.useId"],
+		"body": ["const ${1:id} = useId();"],
+		"description": "`useId()` is a hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches."
+	}
+}

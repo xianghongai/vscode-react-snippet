@@ -33,6 +33,7 @@ If you need Router please install the separate [React Router Snippets](https://m
 ## Snippets
 
 - Import
+- Hooks
 - Class Component - State/Props
 - Class Component - Lifecycle
 - Functional Component - Hooks
@@ -61,6 +62,168 @@ If you need Router please install the separate [React Router Snippets](https://m
 | `impt`    | <code>import PropTypes from 'prop-types'</code>                                                  | **im**port **P**rop**T**ypes                                 |
 
 
+### Hooks 🦋
+
+**u**se**S**tate (`us`/`useState`/`hooks.useState`) →
+
+```jsx
+const [state, setstate] = useState(initialState)
+```
+
+**u**se**E**ffect (`ue`/`useEffect`/`hooks.useEffect`) →
+
+```jsx
+useEffect(() => {
+
+}, [])
+```
+
+**u**se**E**ffect **C**leanup (`uec`/`hooks.useEffect.Cleanup`) →
+
+```jsx
+useEffect(() => {
+
+
+  return () => {
+
+  }
+}, [])
+```
+
+**u**se**R**ef (`ure`/`useRef`/`hooks.useRef`) →
+
+```jsx
+const ref = useRef(initialValue)
+```
+
+**u**se**C**ontext (`uc`/`useContext`/`hooks.useContext`) →
+
+```jsx
+const featureContext = useContext(FeatureContext)
+```
+
+**u**se**R**educer (`ur`/`useReducer`/`hooks.useReducer`) →
+
+```jsx
+const [state, dispatch] = useReducer(reducer, initializerArg)
+```
+
+**u**se**C**allback (`ucb`/`useCallback`/`hooks.useCallback`) →
+
+```jsx
+let memoizedCallback = useCallback(() => {
+  fn(deps)
+}, [deps])
+```
+
+**u**se**M**emo (`um`/`useMemo`/`hooks.useMemo`) →
+
+```jsx
+let memoizedValue = useMemo(() => computeExpensiveValue(deps), [deps])
+```
+
+**u**se**I**mperative**H**andle (`uih`/`useImperativeHandle`/`hooks.useImperativeHandle`) →
+
+```jsx
+// exposed components
+import React, { useRef, useImperativeHandle, forwardRef } from 'react'
+
+function Button(props, ref) {
+  const buttonRef = useRef()
+
+  useImperativeHandle(ref, () => ({
+    exposedProperty: () => {
+      console.log(`event in Button`)
+    },
+  }))
+
+  return (
+    <button ref={buttonRef} {...props}>
+      Button
+    </button>
+  )
+}
+
+
+export default forwardRef(Button)
+
+
+// parent components
+import React, { useRef } from 'react'
+import Button from './Button'
+
+function Form() {
+  const buttonRef = useRef(null)
+
+  const handleClick = () => {
+    console.log(Object.keys(buttonRef.current))
+    console.log('event in Form')
+    buttonRef.current.exposedProperty()
+  }
+
+  return (
+    <>
+      <Button onClick={handleClick} ref={buttonRef} />
+    </>
+  )
+}
+```
+
+**u**se**D**ebug**V**alue (`udv`/`useDebugValue`/`hooks.useDebugValue`) →
+
+```jsx
+useDebugValue(value)
+```
+
+**u**se**L**ayout**E**ffect (`ule`/`useLayoutEffect`/`hooks.useLayoutEffect`) →
+
+```jsx
+useLayoutEffect(() => {
+  // side effects
+
+
+  // cleanup
+  return () => {
+
+  }
+}, [])
+```
+
+**u**se**I**d (`uid`/`useId`/`hooks.useId`) →
+
+```jsx
+const id = useId();
+```
+
+**u**se**D**eferred**V**alue (`udv`/`useDeferredValue`/`hooks.useDeferredValue`) →
+
+```jsx
+const [deferredValue] = useDeferredValue(value)
+```
+
+**u**se**I**nsertion**E**ffect (`uie`/`useInsertionEffect`/`hooks.useInsertionEffect`) →
+
+```jsx
+useInsertionEffect(() => {
+
+}, [])
+```
+
+**u**se**S**ync**E**xternal**S**tore (`uses`/`useSyncExternalStore`/`hooks.useSyncExternalStore`) →
+
+```jsx
+const state = useSyncExternalStore(subscribe, getSnapshot)
+```
+
+**u**se**T**ransition (`ut`/`useTransition`/`hooks.useTransition`) →
+
+```jsx
+const [isPending, startTransition] = useTransition()
+```
+
+
+
+
 ### Class Component **State/Props** 🐟
 
 | prefix  | body                                             | description                                         |
@@ -73,42 +236,6 @@ If you need Router please install the separate [React Router Snippets](https://m
 | `tp`    | `this.props.propertyName`                        | **t**his.**p**rops property name                    |
 | `ts`    | `this.state.propertyName`                        | **t**his.**s**tate property name                    |
 | `bfn`   | `this.methodName = this.methodName.bind(this)`   | **b**ind a **f**u**n**ction to a component instance |
-
-
-### Class Component **Lifecycle** 🐠
-
-| prefix        | body                                                                                                                                                       |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `constructor` | <code><strong>constructor</strong>(props) { super(props); this.state = { }; this.handleEvent = this.handleEvent.bind(this) }</code>                        |
-| `cdm`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>M</strong>ount(){ }</code>                                                                     |
-| `cdu`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>U</strong>pdate(prevProps, prevState){ ... }</code>                                            |
-| `cwu`         | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>Un</strong>mount(){ }</code>                                                                  |
-| `gdsfp`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>P</strong>rops(nextProps, prevState){ }</code> |
-| `gdsfe`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>E</strong>rror(error){ }</code>                |
-| `gsbu`        | <code><strong>g</strong>et<strong>S</strong>napshot<strong>B</strong>efore<strong>U</strong>pdate(prevProps, prevState){ }</code>                          |
-| `scu`         | <code><strong>s</strong>hould<strong>C</strong>omponent<strong>U</strong>pdate(nextProps, nextState, nextContext){ }</code>                                |
-| `render`      | <code><strong>render</strong>(){ return <></> }</code>                                                                                                     |
-| `cwm`         | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>M</strong>ount(){ }                                                                   |
-| `cwrp`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>R</strong>eceive<strong>P</strong>rops(nextProps, nextContext){ }                     |
-| `cwup`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate(nextProps, nextState, nextContext){ }                                 |
-
-
-### Functional Component **Hooks** 🦋
-
-| prefix | body                                                                                | description                                |
-|--------|-------------------------------------------------------------------------------------|--------------------------------------------|
-| `us`   | `const [state, setState] = useState(initialState)`                                  | **u**se**S**tate                           |
-| `ue`   | `useEffect(() => { /* side effects */ }, []);`                                      | asynchronously, **u**se**E**ffect          |
-| `uec`  | `useEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])`       | **u**se**E**ffect **C**leanup              |
-| `uc`   | `const context = useContext(context)`                                               | **u**se**C**ontext                         |
-| `ur`   | `const [state, dispatch] = useReducer(reducer, initializerArg, initializer)`        | **u**se**R**educer                         |
-| `ucb`  | `let memoizedCallback = useCallback(() => { fn() }, [deps])`                        | **u**se**C**allback                        |
-| `um`   | `let memoizedValue = useMemo(() => {}, [deps])`                                     | **u**se**M**emo                            |
-| `ure`  | `const ref = useRef(initialValue)`                                                  | **u**se**R**ef                             |
-| `uih`  | `useImperativeHandle(ref, () => { handler }, [deps])`                               | **u**se**I**mperative**H**andle            |
-| `udv`  | `useDebugValue(value)`                                                              | **u**se**D**ebug**V**alue                  |
-| `ule`  | `useLayoutEffect(() => { /* side effects */ return () => { /* cleanup  */ } }, [])` | synchronously, **u**se**L**ayout**E**ffect |
-
 
 ### Functional Component 🌿
 
@@ -141,7 +268,6 @@ FileNamePascalCase.propTypes = {  }
 
 export default FileNamePascalCase
 ```
-
 
 ### Class Component 🥀
 
@@ -182,6 +308,22 @@ export default class FileNamePascalCase extends Component {
 }
 ```
 
+### Class Component **Lifecycle** 🐠
+
+| prefix        | body                                                                                                                                                       |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `constructor` | <code><strong>constructor</strong>(props) { super(props); this.state = { }; this.handleEvent = this.handleEvent.bind(this) }</code>                        |
+| `cdm`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>M</strong>ount(){ }</code>                                                                     |
+| `cdu`         | <code><strong>c</strong>omponent<strong>D</strong>id<strong>U</strong>pdate(prevProps, prevState){ ... }</code>                                            |
+| `cwu`         | <code><strong>c</strong>omponent<strong>W</strong>ill<strong>Un</strong>mount(){ }</code>                                                                  |
+| `gdsfp`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>P</strong>rops(nextProps, prevState){ }</code> |
+| `gdsfe`       | <code>static <strong>g</strong>et<strong>D</strong>erived<strong>S</strong>tate<strong>F</strong>rom<strong>E</strong>rror(error){ }</code>                |
+| `gsbu`        | <code><strong>g</strong>et<strong>S</strong>napshot<strong>B</strong>efore<strong>U</strong>pdate(prevProps, prevState){ }</code>                          |
+| `scu`         | <code><strong>s</strong>hould<strong>C</strong>omponent<strong>U</strong>pdate(nextProps, nextState, nextContext){ }</code>                                |
+| `render`      | <code><strong>render</strong>(){ return <></> }</code>                                                                                                     |
+| `cwm`         | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>M</strong>ount(){ }                                                                   |
+| `cwrp`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>R</strong>eceive<strong>P</strong>rops(nextProps, nextContext){ }                     |
+| `cwup`        | <code>UNSAFE\_<strong>c</strong>omponent<strong>W</strong>ill<strong>U</strong>pdate(nextProps, nextState, nextContext){ }                                 |
 
 ### Class Pure Component 🐙
 
@@ -210,7 +352,6 @@ export default class FileNamePascalCase extends PureComponent {
   }
 }
 ```
-
 
 ### Function Memo Component 🌵
 
