@@ -1,0 +1,27 @@
+{
+	"Destruct Class Component State": {
+		"prefix": ["dts"],
+		"body": ["const { $1 } = this.state"],
+		"description": "Creates and assigns a local variable using state destructing\n"
+	},
+	"React Class Component setState updates by object": {
+		"prefix": ["tss"],
+		"body": "this.setState({$0})",
+		"description": "Performs a shallow merge of nextState into current state\n"
+	},
+	"React Class Component setState updates by method": {
+		"prefix": ["tssfn"],
+		"body": ["this.setState((prevState, props) => { return { $0 }})", ""],
+		"description": "Performs a shallow merge of nextState into current state\n"
+	},
+	"this.state.property": {
+		"prefix": ["tsp"],
+		"body": "this.state.${0:propertyName}"
+	},
+
+	"React Class Component this.bind.method": {
+		"prefix": ["bfn"],
+		"body": "this.${1:methodName} = this.${1:methodName}.bind(this)$0",
+		"description": "bind a function to a component instance\n"
+	}
+}

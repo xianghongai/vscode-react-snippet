@@ -1,6 +1,6 @@
 {
 	"Create React.PureComponent and export it by default, it's works with class-based components": {
-		"prefix": ["rpc"],
+		"prefix": ["rpc", "PureComponent"],
 		"body": [
 			"import React, { PureComponent } from 'react'",
 			"",

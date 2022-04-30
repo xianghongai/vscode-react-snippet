@@ -1,0 +1,7 @@
+{
+	"ReactDOM.createPortal": {
+		"prefix": "createPortal",
+		"body": ["ReactDOM.createPortal(${1:child}, ${2:container})"],
+		"description": "ReactDOM.createPortal"
+	}
+}

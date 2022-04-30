@@ -1,0 +1,253 @@
+{
+	"pt.array (Primitive Type)": {
+		"prefix": ["pt.array"],
+		"body": ["PropTypes.array,"],
+		"description": "Array prop type.\n"
+	},
+	"pt.array.required": {
+		"prefix": ["pt.array.required"],
+		"body": ["PropTypes.array.isRequired,"],
+		"description": "Array prop type required.\n"
+	},
+	"pt.bool (Primitive Type)": {
+		"prefix": ["pt.bool"],
+		"body": ["PropTypes.bool,"],
+		"description": "Bool prop type.\n"
+	},
+	"pt.bool.required": {
+		"prefix": ["pt.bool.required"],
+		"body": ["PropTypes.bool.isRequired,"],
+		"description": "Bool prop type required.\n"
+	},
+	"pt.func (Primitive Type)": {
+		"prefix": ["pt.func"],
+		"body": ["PropTypes.func,"],
+		"description": "Func prop type.\n"
+	},
+	"pt.func.required": {
+		"prefix": ["pt.func.required"],
+		"body": ["PropTypes.func.isRequired,"],
+		"description": "Func prop type required.\n"
+	},
+	"pt.number (Primitive Type)": {
+		"prefix": ["pt.number"],
+		"body": ["PropTypes.number,"],
+		"description": "Number prop type.\n"
+	},
+	"pt.number.required": {
+		"prefix": ["pt.number.required"],
+		"body": ["PropTypes.number.isRequired,"],
+		"description": "Number prop type required.\n"
+	},
+	"pt.object (Primitive Type)": {
+		"prefix": ["pt.object"],
+		"body": ["PropTypes.object,"],
+		"description": "Object prop type.\n"
+	},
+	"pt.object.required": {
+		"prefix": ["pt.object.required"],
+		"body": ["PropTypes.object.isRequired,"],
+		"description": "Object prop type required.\n"
+	},
+	"pt.string (Primitive Type)": {
+		"prefix": ["pt.string"],
+		"body": ["PropTypes.string,"],
+		"description": "String prop type.\n"
+	},
+	"pt.string.required": {
+		"prefix": ["pt.string.required"],
+		"body": ["PropTypes.string.isRequired,"],
+		"description": "String prop type required.\n"
+	},
+	"pt.symbol (Primitive Type)": {
+		"prefix": ["pt.symbol"],
+		"body": ["PropTypes.symbol,"],
+		"description": "Symbol prop type.\n"
+	},
+	"pt.symbol.required": {
+		"prefix": ["pt.symbol.required"],
+		"body": ["PropTypes.symbol.isRequired,"],
+		"description": "Symbol prop type required.\n"
+	},
+	"pt.any": {
+		"prefix": ["pt.any"],
+		"body": ["PropTypes.any,"],
+		"description": "A value of any data type.\n"
+	},
+	"pt.any.required": {
+		"prefix": ["pt.any.required"],
+		"body": ["PropTypes.any.required,"],
+		"description": "A value of any data type required.\n"
+	},
+	"pt.arrayOf": {
+		"prefix": ["pt.arrayOf"],
+		"body": ["PropTypes.arrayOf(${0:PropTypes.number}),"],
+		"description": "An array of a certain type.\n"
+	},
+	"pt.arrayOf.required": {
+		"prefix": ["pt.arrayOf.required"],
+		"body": ["PropTypes.arrayOf(${0:PropTypes.number}).isRequired,"],
+		"description": "An array of a certain type required.\n"
+	},
+	"pt.element": {
+		"prefix": ["pt.element"],
+		"body": ["PropTypes.element,"],
+		"description": "A React element (ie. <MyComponent />).\n"
+	},
+	"pt.element.required": {
+		"prefix": ["pt.element.required"],
+		"body": ["PropTypes.element.isRequired,"],
+		"description": "A React element (ie. <MyComponent />) required.\n"
+	},
+	"pt.elementType": {
+		"prefix": ["pt.elementType"],
+		"body": ["PropTypes.elementType,"],
+		"description": "A React element type (ie. MyComponent).\n"
+	},
+	"pt.elementType.required": {
+		"prefix": ["pt.elementType.required"],
+		"body": ["PropTypes.elementType.isRequired,"],
+		"description": "A React element type (ie. MyComponent) required.\n"
+	},
+	"pt.instanceOf": {
+		"prefix": ["pt.instanceOf"],
+		"body": ["PropTypes.instanceOf(${0:Constructor}),"],
+		"description": "Is an instance of a class prop type, This uses JS's instanceof operator.\n"
+	},
+	"pt.instanceOf.required": {
+		"prefix": ["pt.instanceOf.required"],
+		"body": ["PropTypes.instanceOf(${0:Constructor}).isRequired,"],
+		"description": "Is an instance of a class prop type required.\n"
+	},
+	"pt.node": {
+		"prefix": ["pt.node"],
+		"body": ["PropTypes.node,"],
+		"description": "Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types.\n"
+	},
+	"pt.node.required": {
+		"prefix": ["pt.node.required"],
+		"body": ["PropTypes.node.isRequired,"],
+		"description": "Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types required.\n"
+	},
+	"pt.objectOf": {
+		"prefix": ["pt.objectOf"],
+		"body": ["PropTypes.objectOf(${0:PropTypes.number}),"],
+		"description": "An object with property values of a certain type.\n"
+	},
+	"pt.objectOf.required": {
+		"prefix": ["pt.objectOf.required"],
+		"body": ["PropTypes.objectOf(${0:PropTypes.number}).isRequired,"],
+		"description": "An object with property values of a certain type required.\n"
+	},
+	"pt.oneOf (Enum Type)": {
+		"prefix": ["pt.oneOf"],
+		"body": ["PropTypes.oneOf(['${0:value}']),"],
+		"description": "prop limited to specific values by treating it as an enum.\n"
+	},
+	"pt.oneOf.required": {
+		"prefix": ["pt.oneOf.required"],
+		"body": ["PropTypes.oneOf(['${0:value}']).isRequired,"],
+		"description": "prop limited to specific values by treating it as an enum required.\n"
+	},
+	"pt.oneOfType": {
+		"prefix": ["pt.oneOfType"],
+		"body": [
+			"PropTypes.oneOfType([",
+			"\t${1:PropTypes.string},",
+			"\t${2:PropTypes.number},",
+			"\t${3:PropTypes.instanceOf(Message)}",
+			"]),"
+		],
+		"description": "An object that could be one of many types.\n"
+	},
+	"pt.oneOfType.required": {
+		"prefix": ["pt.oneOfType.required"],
+		"body": [
+			"PropTypes.oneOfType([",
+			"\t${1:PropTypes.string},",
+			"\t${2:PropTypes.number},",
+			"\t${3:PropTypes.instanceOf(Message)}",
+			"]).isRequired,"
+		],
+		"description": "An object that could be one of many types required.\n"
+	},
+	"pt.shape": {
+		"prefix": ["pt.shape"],
+		"body": [
+			"PropTypes.shape({",
+			"\toptionalProperty: ${1:PropTypes.string,}",
+			"\trequiredProperty: ${2:PropTypes.number.isRequired,}",
+			"}),"
+		],
+		"description": "An object taking on a particular shape.\n"
+	},
+	"pt.shape.required": {
+		"prefix": ["pt.shape.required"],
+		"body": [
+			"PropTypes.shape({",
+			"\toptionalProperty: ${1:PropTypes.string,}",
+			"\trequiredProperty: ${2:PropTypes.number.isRequired,}",
+			"}).isRequired,"
+		],
+		"description": "An object taking on a particular shape required.\n"
+	},
+	"pt.exact (Strict Shape Type)": {
+		"prefix": ["pt.exact"],
+		"body": [
+			"PropTypes.exact({",
+			"\toptionalProperty: ${1:PropTypes.string,}",
+			"\trequiredProperty: ${2:PropTypes.number.isRequired,}",
+			"}),"
+		],
+		"description": "An object with warnings on extra properties.\n"
+	},
+	"pt.exact.required": {
+		"prefix": ["pt.exact.required"],
+		"body": [
+			"PropTypes.exact({",
+			"\toptionalProperty: ${1:PropTypes.string,}",
+			"\trequiredProperty: ${2:PropTypes.number.isRequired,}",
+			"}).isRequired,"
+		],
+		"description": "An object with warnings on extra properties isRequired\n"
+	},
+	"pt.custom": {
+		"prefix": ["pt.custom"],
+		"body": [
+			"function (props, propName, componentName) {",
+			"\tif (!/matchme/.test(props[propName])) {",
+			"\t\treturn new Error('Invalid prop `' + propName + '` supplied to' + ' `' + componentName + '`. Validation failed.')",
+			"\t}",
+			"}"
+		],
+		"description": "specify a custom validator. It should return an Error object if the validation fails. Don't `console.warn` or throw, as this won't work inside `oneOfType`.\n"
+	},
+	"pt.custom.array": {
+		"prefix": ["pt.custom.array"],
+		"body": [
+			"PropTypes.arrayOf(function (propValue, key, componentName, location, propFullName) {",
+			"\tif (!/matchme/.test(propValue[key])) {",
+			"\t\treturn new Error(",
+			"\t\t\t'Invalid prop `' + propFullName + '` supplied to' + ' `' + componentName + '`. Validation failed.'",
+			"\t\t)",
+			"\t}",
+			"})"
+		],
+		"description": "supply a custom validator to `arrayOf` and `objectOf`. It should return an Error object if the validation fails. The validator will be called for each key in the array or object. The first two arguments of the validator are the array or object itself, and the current item's key.\n"
+	},
+	"PT.defaultProps": {
+		"prefix": ["PT.defaultProps"],
+		"body": ["static defaultProps = {\n\t$0\n}\n"],
+		"description": "declare `defaultProps` as static property within a React component class.\n"
+	},
+	"pt.checkPropTypes()": {
+		"prefix": ["pt.checkPropTypes()"],
+		"body": ["PropTypes.checkPropTypes(MyComponent.propTypes, props, 'prop', 'MyComponent')"],
+		"description": "trigger the validation manually.\n"
+	},
+	"pt.resetWarningCache()": {
+		"prefix": ["pt.resetWarningCache()"],
+		"body": ["PropTypes.resetWarningCache()"],
+		"description": "reset the error warning cache in tests.\n"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"React.Children.map": {
+		"prefix": ["rcm", "React.Children.map"],
+		"body": [
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({ children }) {",
+			"\tconst extendedChildren = React.Children.map(children, (child) => {",
+			"\t\treturn React.cloneElement(child, { ...child.props,${2: moreProps: 'value'} })",
+			"\t})",
+			"\treturn <>{extendedChildren}</>",
+			"}",
+			""
+		],
+		"description": "React.Children.map"
+	},
+	"React.Children.toArray": {
+		"prefix": ["rcta", "React.Children.toArray"],
+		"body": ["React.Children.toArray(children)"],
+		"description": "React.Children.toArray"
+	}
+}

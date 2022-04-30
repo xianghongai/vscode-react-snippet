@@ -1,0 +1,9 @@
+{
+	"React.lazy": {
+		"prefix": "forwardRef",
+		"body": [
+			"const ${1}= React.lazy(() => import('./${1:FeatureComponent'))}"
+		],
+		"description": "`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren’t used during the initial render."
+	}
+}

@@ -13,7 +13,11 @@
 	},
 	"import ReactDOM": {
 		"prefix": ["imrd"],
-		"body": ["import ReactDOM from 'react-dom'"]
+		"body": ["import { createRoot } from 'react-dom/client'"]
+	},
+	"import ReactDOMServer": {
+		"prefix": ["imrds"],
+		"body": ["import ReactDOMServer from 'react-dom/server'"]
 	},
 	"import react component": {
 		"prefix": ["imrc"],
@@ -21,7 +25,10 @@
 	},
 	"import React, { Component } & PropTypes": {
 		"prefix": ["imrcpt"],
-		"body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'"]
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'"
+		]
 	},
 	"import React, { PureComponent }": {
 		"prefix": ["imrpc"],
@@ -29,7 +36,10 @@
 	},
 	"import React, { PureComponent } & PropTypes": {
 		"prefix": ["imrpcpt"],
-		"body": ["import React, { PureComponent } from 'react'", "import PropTypes from 'prop-types'"]
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import PropTypes from 'prop-types'"
+		]
 	},
 	"import React, { memo }": {
 		"prefix": ["imrm"],
@@ -37,7 +47,10 @@
 	},
 	"import React, { memo } & PropTypes": {
 		"prefix": ["imrmpt"],
-		"body": ["import React, { memo } from 'react'", "import PropTypes from 'prop-types'"]
+		"body": [
+			"import React, { memo } from 'react'",
+			"import PropTypes from 'prop-types'"
+		]
 	},
 	"import PropTypes": {
 		"prefix": ["impt"],

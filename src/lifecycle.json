@@ -58,7 +58,7 @@
 		"prefix": ["gdsfe", "lifecycle.getDerivedStateFromError"],
 		"body": [
 			"static getDerivedStateFromError(error) { // Rarely Used",
-			"\treturn { hasError: true };",
+			"\treturn { hasError: true }",
 			"}",
 			"$0",
 			""
