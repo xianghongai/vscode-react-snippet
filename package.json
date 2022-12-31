@@ -4,7 +4,7 @@
 	"displayName": "React Snippets",
 	"description": "Code snippets for React",
 	"icon": "art/icon.png",
-	"version": "18.0.0",
+	"version": "18.0.1",
 	"galleryBanner": {
 		"color": "#ffffff",
 		"theme": "dark"
@@ -34,6 +34,10 @@
 		"snippets": [
 			{
 				"language": "javascript",
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": "typescript",
 				"path": "./snippets/javascript.json"
 			},
 			{
