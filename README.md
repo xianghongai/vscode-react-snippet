@@ -7,13 +7,13 @@
     <img src="https://img.shields.io/github/repo-size/xianghongai/vscode-react-snippet?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-react-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/version-short/nicholashsiang.vscode-react-snippet.svg?style=plastic&color=61dafb">
+    <img src="https://vsmarketplacebadges.dev/version-short/NicholasHsiang.vscode-react-snippet.png?style=plastic&color=61dafb">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-react-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/installs-short/nicholashsiang.vscode-react-snippet.svg?style=plastic&color=4ac51c">
+    <img src="https://vsmarketplacebadges.dev/installs-short/NicholasHsiang.vscode-react-snippet.png?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-react-snippet">
-    <img src="https://vsmarketplacebadge.apphb.com/rating-short/nicholashsiang.vscode-react-snippet.svg?style=plastic&color=4ac51c">
+    <img src="https://vsmarketplacebadges.dev/rating-short/NicholasHsiang.vscode-react-snippet.png?style=plastic&color=4ac51c">
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=nicholashsiang.vscode-react-snippet">
     <img src="https://img.shields.io/github/license/xianghongai/vscode-react-snippet?maxAge=2592000&style=plastic&color=4ac51c">
