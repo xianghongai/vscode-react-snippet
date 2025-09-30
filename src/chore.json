@@ -1,7 +1,0 @@
-{
-	"region": {
-		"prefix": ["region"],
-		"body": ["// #region $1", "$2", "// #endregion"],
-		"description": "Folding regions\n"
-	}
-}

@@ -1,0 +1,6 @@
+{
+	"use": {
+		"prefix": "use",
+		"body": ["const ${1:value} = use(${2:PromiseOrContext});"]
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"useOptimistic": {
+		"prefix": ["useOptimistic"],
+		"body": [
+			"const [optimistic${1:Features}, ${2:addOptimisticFeature}] = useOptimistic(",
+			"\t${3:featuresState},",
+			"\t(${4:currentFeaturesState}, ${5:optimisticFeature}) => {",
+			"\t\treturn ${0:{ ...currentFeaturesState, ...optimisticFeature \\}};",
+			"\t}",
+			");"
+		]
+	},
+	"useSyncExternalStore": {
+		"prefix": ["useSyncExternalStore"],
+		"body": [
+			"import { useSyncExternalStore } from 'react';",
+			"",
+			"export function use${1:OnlineStatus}() {",
+			"\tconst ${2:isOnline} = useSyncExternalStore(subscribe, getSnapshot);",
+			"\treturn $2;",
+			"}",
+			"",
+			"function subscribe(callback) {",
+			"\t${3:// subscribe}",
+			"}",
+			"",
+			"function getSnapshot() {",
+			"\t${4:// getSnapshot}",
+			"}",
+			""
+		],
+		"description": "useSyncExternalStore"
+	},
+	"useActionState": {
+		"prefix": ["useActionState"],
+		"body": [
+			"const [state, submitAction, isPending] = useActionState(",
+			"\tasync (previousState, formData) => {",
+			"\t\t${2:// Simulate an async operation, e.g., form submission}",
+			"\t},",
+			"\t${1:initialState}",
+			");",
+			""
+		]
+	}
+}

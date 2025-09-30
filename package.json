@@ -1,62 +1,69 @@
 {
-	"name": "vscode-react-snippet",
-	"publisher": "NicholasHsiang",
-	"displayName": "React Snippets",
-	"description": "Code snippets for React",
-	"icon": "art/icon.png",
-	"version": "18.0.1",
-	"galleryBanner": {
-		"color": "#ffffff",
-		"theme": "dark"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/xianghongai/vscode-react-snippet/issues"
-	},
-	"homepage": "https://github.com/xianghongai/vscode-react-snippet/",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
-	},
-	"engines": {
-		"vscode": "^0.12.x"
-	},
-	"categories": [
-		"Snippets"
-	],
-	"keywords": [
-		"React",
-		"Snippet",
-		"React Snippets",
-		"React Code Snippets"
-	],
-	"contributes": {
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets/javascript.json"
-			},
-			{
-				"language": "typescript",
-				"path": "./snippets/javascript.json"
-			},
-			{
-				"language": "javascriptreact",
-				"path": "./snippets/javascript.json"
-			},
-			{
-				"language": "typescriptreact",
-				"path": "./snippets/javascript.json"
-			}
-		]
-	},
-	"scripts": {
-		"prebuild": "node merge.js",
-		"build": "vsce package",
-		"prepublish": "npm run build",
-		"publish": "vsce publish"
-	},
-	"devDependencies": {
-		"glob": "^7.1.4"
-	}
+  "name": "vscode-react-snippet",
+  "publisher": "NicholasHsiang",
+  "displayName": "React Snippets",
+  "description": "Only React 19+",
+  "icon": "art/icon.png",
+  "version": "19.1.0",
+  "type": "module",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-react-snippet/issues"
+  },
+  "homepage": "https://github.com/xianghongai/vscode-react-snippet/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
+  },
+  "engines": {
+    "vscode": "^0.12.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "React",
+    "Snippet",
+    "React Snippets",
+    "React Code Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/jsx.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/tsx.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/jsx.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/tsx.json"
+      }
+    ]
+  },
+  "scripts": {
+    "format": "prettier --write --cache .",
+    "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
+    "prebuild": "node main.js",
+    "build": "vsce package",
+    "prepublish": "npm run build",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@vscode/vsce": "^3.6.0",
+    "glob": "^11.0.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
 }

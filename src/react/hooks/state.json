@@ -1,0 +1,26 @@
+{
+	"import useState": {
+		"prefix": ["import-useState"],
+		"body": ["import { useState } from 'react';"]
+	},
+	"useState": {
+		"prefix": ["useState"],
+		"body": [
+			"const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState});$0"
+		]
+	},
+	"useReducer": {
+		"prefix": "useReducer",
+		"body": [
+			"function ${1:reducer}(state, action) {",
+			"\t${7}",
+			"}",
+			"",
+			"function ${3:createInitialState}(${2:initialArg}) {",
+			"\t${6}",
+			"}",
+			"",
+			"const [${4:state}, ${5:dispatch}] = useReducer(${1:reducer}, ${2:initialArg}, ${3:createInitialState});"
+		]
+	}
+}

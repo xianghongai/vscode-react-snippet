@@ -1,7 +1,0 @@
-{
-	"useTransition": {
-		"prefix": ["ut", "useTransition", "hooks.useTransition"],
-		"body": ["const [${1:isPending}, ${2:startTransition}] = useTransition()"],
-		"description": "`useTransition()`, Returns a stateful value for the pending state of the transition, and a function to start it."
-	}
-}

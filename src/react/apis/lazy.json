@@ -1,0 +1,8 @@
+{
+	"lazy": {
+		"prefix": "lazy",
+		"body": [
+			"const ${1:FeatureComponent} = lazy(() => import('${2:@/views/components/FeatureComponent.tsx}'));"
+		]
+	}
+}

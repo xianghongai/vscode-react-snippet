@@ -1,0 +1,30 @@
+{
+	"useRef": {
+		"prefix": ["useRef"],
+		"body": ["const ${1:feature}Ref = useRef(${2:null});"]
+	},
+	"useImperativeHandle": {
+		"prefix": "useImperativeHandle",
+		"body": [
+			"useImperativeHandle(${1:ref}, () => ({",
+			"\t${0}",
+			"}), [${2:dependencies}]);"
+		]
+	},
+	"forwardRef (Legacy API)": {
+		"prefix": ["forwardRef"],
+		"body": [
+			"import { forwardRef } from 'react';",
+			"",
+			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = forwardRef(function $1(${2:props}, ref) {",
+			"\t$0",
+			"",
+			"\treturn (",
+			"\t\t$4",
+			"\t);",
+			"});",
+			"",
+			"export default $1;"
+		]
+	}
+}

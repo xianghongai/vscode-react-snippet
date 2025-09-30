@@ -1,0 +1,18 @@
+{
+	"Profiler": {
+		"prefix": "Profiler",
+		"body": [
+			"<Profiler id=\"${1:Sidebar}\" onRender={onRender}>",
+			"\t<${1:Sidebar} />$0",
+			"</Profiler>"
+		]
+	},
+	"onRender": {
+		"prefix": "onRender",
+		"body": [
+			"function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {",
+			"\tconsole.log(\"🚀 ~ onRender ~ id:%o, phase:%o, actualDuration:%o, baseDuration:%o, startTime:%o, commitTime:%o\", id, phase, actualDuration, baseDuration, startTime, commitTime);",
+			"}"
+		]
+	}
+}

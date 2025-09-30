@@ -1,7 +1,0 @@
-{
-	"useDeferredValue": {
-		"prefix": ["udv", "useDeferredValue", "hooks.useDeferredValue"],
-		"body": ["const [${2:deferredValue}] = useDeferredValue(${1:value})"],
-		"description": "`useDeferredValue()` accepts a value and returns a new copy of the value that will defer to more urgent updates."
-	}
-}

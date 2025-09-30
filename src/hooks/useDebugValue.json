@@ -1,7 +1,0 @@
-{
-	"useDebugValue": {
-		"prefix": ["udv", "useDebugValue", "hooks.useDebugValue"],
-		"body": ["useDebugValue(${1:value})"],
-		"description": "`useDebugValue()`, can be used to display a label for custom hooks in React DevTools.\n"
-	}
-}

@@ -1,0 +1,22 @@
+{
+	"useEffect": {
+		"prefix": ["useEffect"],
+		"body": ["useEffect(() => {", "\t$0", "}, [${1}]);"]
+	},
+	"useEffect Cleanup": {
+		"prefix": ["useEffect-Cleanup"],
+		"body": [
+			"useEffect(() => {",
+			"\t$2",
+			"",
+			"\treturn () => {",
+			"\t\t$3",
+			"\t}",
+			"}, [${1}])"
+		]
+	},
+	"useLayoutEffect": {
+		"prefix": ["useLayoutEffect"],
+		"body": ["useLayoutEffect(() => {", "\t$0", "}, [${1}]);"]
+	}
+}

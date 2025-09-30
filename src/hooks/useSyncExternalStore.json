@@ -1,9 +1,0 @@
-{
-	"useSyncExternalStore": {
-		"prefix": ["uses", "useSyncExternalStore", "hooks.useSyncExternalStore"],
-		"body": [
-			"const state = useSyncExternalStore(${1:subscribe}, ${2:getSnapshot})"
-		],
-		"description": "`useSyncExternalStore()` is a hook recommended for reading and subscribing from external data sources in a way that’s compatible with concurrent rendering features like selective hydration and time slicing."
-	}
-}

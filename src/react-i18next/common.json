@@ -1,0 +1,10 @@
+{
+	"import useTranslation (react-i18next)": {
+		"prefix": "import-useTranslation",
+		"body": ["import { useTranslation } from 'react-i18next';"]
+	},
+	"useTranslation (react-i18next)": {
+		"prefix": "useTranslation",
+		"body": ["const { t } = useTranslation(${1:['ns']});"]
+	}
+}

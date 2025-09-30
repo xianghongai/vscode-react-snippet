@@ -1,0 +1,47 @@
+{
+	"memo": {
+		"prefix": "memo",
+		"body": [
+			"import { memo } from 'react';",
+			"",
+			"export interface ${1}Props {",
+			"\t$3",
+			"}",
+			"",
+			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = memo(function $1(${2:props}: ${1}Props) {",
+			"\t$0",
+			"",
+			"\treturn (",
+			"\t\t$4",
+			"\t);",
+			"});",
+			"",
+			"export default $1;"
+		]
+	},
+	"memo arePropsEqual": {
+		"prefix": "memo-arePropsEqual",
+		"body": [
+			"import { memo } from 'react';",
+			"",
+			"export interface ${1}Props {",
+			"\t$4",
+			"}",
+			"",
+			"const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} = memo(function $1(${2:props}: ${1}Props) {",
+			"\t$0",
+			"",
+			"\treturn (",
+			"\t\t$5",
+			"\t);",
+			"}, arePropsEqual);",
+			"",
+			"function arePropsEqual(oldProps, newProps) {",
+			"\treturn (oldProps.${3:property} === newProps.${3:property});",
+			"}",
+			"",
+			"export default $1;"
+		],
+		"description": "memo"
+	}
+}

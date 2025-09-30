@@ -22,21 +22,21 @@
 
 ![Screenshot](https://raw.githubusercontent.com/caringrun/assets/master/vscode-react-snippet.gif)
 
-[中文 README](./README-CN.md)
+## 设计说明
 
-## Design Notes
+React 支持 Hooks 之后 Functional Programming 范式性，React 库结构性代码不多，尤其是 React Compiler 之后，无需再手动使用 `useMemo`，`useCallback`，和 `React.memo`，模板代码少之又少了。
 
-Due to the React Hooks 'Functional Programming' paradigm, there is not much structural code. Especially with the React Compiler, you no longer need to manually reach for `useMemo`, `useCallback`, or `React.memo`, so there is very little template code remaining.
+因此，这个代码片段扩展仅包含下面三部分内容：
 
-Therefore, this snippet extension only includes the following three parts:
+1、函数式组件
 
-1. Functional components
-2. Common Hooks
-3. Common APIs
+2、常用 Hooks
+
+3、常用 API
 
 ## Snippets
 
-### (1). Functional Components
+### 函数式组件
 
 `fc` - React <strong><u style="color: red;">F</u></strong>unctional <strong><u style="color: red;">C</u></strong>omponent (TypeScript)
 
@@ -82,7 +82,7 @@ export default function Feature(props) {
 }
 ```
 
-`rfc` - <strong><u style="color: red;">R</u></strong>eact <strong><u style="color: red;">F</u></strong>unctional <strong><u style="color: red;">C</u></strong>omponent
+`rfc` - <strong><u style="color: red;">R</u></strong>eact <strong><u style="color: red;">F</u></strong>unctional <strong><u style="color: red;">C</u></strong>omponent (TypeScript)
 
 ```javascript
 function Feature(props) {
@@ -94,40 +94,42 @@ function Feature(props) {
 }
 ```
 
-### (2). Hooks
+### 常用 Hooks
 
-`useCallback` - <strong><u style="color: red;">u</u></strong>se<strong><u style="color: red;">C</u></strong>allback >>
+- `useCallback` - <strong><u style="color: red;">u</u></strong>se<strong><u style="color: red;">C</u></strong>allback
 
 ```javascript
-const handler = useCallback((param) => {}, [dependencies]);
+const handler = useCallback((param) => {
+  
+}, [dependencies]);
 ```
 
-- State Hooks
+- State Hook
   - `useState`
   - `useReducer`
 - Context Hook
   - `useContext`
-- Ref Hooks
+- Ref Hook
   - `useRef`
   - `useImperativeHandle`
-- Effect Hooks
+- Effect Hook
   - `useEffect`
   - `useLayoutEffect`
-- Performance Hooks
+- Performance Hook
   - `useMemo`
   - `useCallback`
   - `useTransition`
   - `useDeferredValue`
-- Other Hooks
+- Other Hook
   - `useActionState`
   - `useSyncExternalStore`
   - `useOptimistic`
 - Form Hooks
   - `useFormStatus`
 
-### (3). APIs
+### 常用 API
 
-`memo` >>
+`memo`
 
 ```typescript
 import { memo } from 'react';
@@ -157,11 +159,11 @@ export default Feature;
 - Client React DOM API
   - `createRoot`
 
-## Related Snippets
+## 相关 Snippets
 
-If you need `react-router`, please install [React Router Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-react-router-snippets).
+如果您需要 `react-router`，请安装 [React Router Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-react-router-snippets)；
 
-If you need `zustand` + `immer`, please install [Zustand + Immer Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-zustand-immer-snippets).
+如果您需要 `zustand` + `immer`，请安装 [Zustand + Immer](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-zustand-immer-snippets)。
 
 ## License
 

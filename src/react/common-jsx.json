@@ -1,0 +1,28 @@
+{
+	"React Functional Component (export default)": {
+		"prefix": "fc",
+		"body": [
+			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+			"\t$0",
+			"",
+			"\treturn (",
+			"\t\t$4",
+			"\t);",
+			"}",
+			""
+		]
+	},
+	"React Functional Component": {
+		"prefix": "rfc",
+		"body": [
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+			"\t$0",
+			"",
+			"\treturn (",
+			"\t\t$4",
+			"\t);",
+			"}",
+			""
+		]
+	}
+}

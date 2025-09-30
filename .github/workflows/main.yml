@@ -5,7 +5,7 @@ on:
   #   branches: [ main ]
   push:
     tags:
-      - "*"
+      - '*'
 
   workflow_dispatch:
 
@@ -15,20 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: 14
+          version: 10
           registry-url: https://registry.npmjs.org/
 
-      - name: Install vsce
-        run: npm i -g vsce
-
       - name: Install the dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Publish
-        run: vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
+        run: pnpm run publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}

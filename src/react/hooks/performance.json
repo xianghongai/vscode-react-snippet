@@ -1,0 +1,34 @@
+{
+	"useMemo": {
+		"prefix": ["useMemo"],
+		"body": [
+			"const ${1:result} = useMemo(() => ${3:heavyCalculation(input)}, [${2:input}]);"
+		]
+	},
+	"useCallback": {
+		"prefix": ["useCallback"],
+		"body": [
+			"const ${1:handler} = useCallback((${3:param}) => {",
+			"\t${4}",
+			"}, [${2:dependencies}]);"
+		]
+	},
+	"useDeferredValue": {
+		"prefix": ["useDeferredValue"],
+		"body": [
+			"const deferred${1/(.*)/${1:/pascalcase}/} = useDeferredValue(${1:query});"
+		]
+	},
+	"useTransition": {
+		"prefix": ["useTransition"],
+		"body": ["const [${1:isPending}, ${2:startTransition}] = useTransition();"]
+	},
+	"startTransition": {
+		"prefix": ["startTransition"],
+		"body": ["startTransition(() => {", "\t${1:// Action}", "});"]
+	},
+	"startTransition async": {
+		"prefix": ["startTransition-async"],
+		"body": ["startTransition(async () => {", "\t${1:// Action}", "});"]
+	}
+}
