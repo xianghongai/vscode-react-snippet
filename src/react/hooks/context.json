@@ -1,14 +1,4 @@
 {
-	"createContext": {
-		"prefix": ["createContext"],
-		"body": [
-			"import { createContext } from 'react';",
-			"",
-			"const ${1:Feature}Context = createContext(null);",
-			"",
-			"export default $1;"
-		]
-	},
 	"useContext": {
 		"prefix": ["useContext"],
 		"body": ["const ${1:featureContext} = useContext(${2:FeatureContext});"]

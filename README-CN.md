@@ -94,13 +94,19 @@ function Feature(props) {
 }
 ```
 
+- Functional Component
+- React API
+  - `<Activity>`
+  - `<Profiler>`
+  - `<Suspense>`
+
 ### 常用 Hooks
 
 - `useCallback` - <strong><u style="color: red;">u</u></strong>se<strong><u style="color: red;">C</u></strong>allback
 
 ```javascript
 const handler = useCallback((param) => {
-  
+
 }, [dependencies]);
 ```
 
@@ -115,6 +121,8 @@ const handler = useCallback((param) => {
 - Effect Hook
   - `useEffect`
   - `useLayoutEffect`
+  - `useInsertionEffect`
+  - `useEffectEvent`
 - Performance Hook
   - `useMemo`
   - `useCallback`

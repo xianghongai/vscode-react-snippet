@@ -1,0 +1,11 @@
+{
+	"Suspense": {
+		"prefix": "Suspense",
+		"body": [
+			"<Suspense fallback={${1:<Loading />}}>",
+			"\t${3:<${2:Feature} />}",
+			"</Suspense>"
+		],
+		"description": "Only Suspense-enabled data sources will activate the Suspense component. They include:\nData fetching with Suspense-enabled frameworks like Relay and Next.js\nLazy-loading component code with `lazy`\nReading the value of a cached Promise with `use`\n\n只有启用了 Suspense 的数据源才会激活 Suspense 组件，它们包括：\n支持 Suspense 的框架如 Relay 和 Next.js。\n使用 `lazy` 懒加载组件代码。\n使用 `use` 读取缓存的 Promise 值。"
+	}
+}

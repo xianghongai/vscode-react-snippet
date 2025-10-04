@@ -2,10 +2,11 @@
 	"Profiler": {
 		"prefix": "Profiler",
 		"body": [
-			"<Profiler id=\"${1:Sidebar}\" onRender={onRender}>",
-			"\t<${1:Sidebar} />$0",
+			"<Profiler id=\"${1:Feature}\" onRender={onRender}>",
+			"\t<${1:Feature} />$0",
 			"</Profiler>"
-		]
+		],
+		"description": "Measure rendering performance of a React tree programmatically.\n\n通过编程方式测量 React 树的渲染性能。"
 	},
 	"onRender": {
 		"prefix": "onRender",

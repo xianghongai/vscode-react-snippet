@@ -1,0 +1,34 @@
+{
+	"it": {
+		"prefix": "it",
+		"body": [
+			"import { act } from 'react';",
+			"import ReactDOMClient from 'react-dom/client';",
+			"import ${1:Counter} from '${2:./Counter}';",
+			"",
+			"describe('${1:Counter} Component', () => {",
+			"  it('can render and update a counter', async () => {",
+			"    const container = document.createElement('div');",
+			"    document.body.appendChild(container);",
+			"",
+			"    // Render the component inside act().",
+			"    await act(async () => {",
+			"      ReactDOMClient.createRoot(container).render(<${1:Counter} />);",
+			"    });",
+			"",
+			"    // Dispatch the event inside act().",
+			"    await act(async () => {",
+			"      button.dispatchEvent(new MouseEvent('click', { bubbles: true }));",
+			"    });",
+			"",
+			"    const button = container.querySelector('button');$3",
+			"    const label = container.querySelector('p');",
+			"",
+			"    expect(label.textContent).toBe('You clicked 1 times');",
+			"    expect(document.title).toBe('You clicked 1 times');",
+			"  });",
+			"});",
+			""
+		]
+	}
+}

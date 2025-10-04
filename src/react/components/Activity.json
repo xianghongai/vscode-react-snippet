@@ -1,0 +1,10 @@
+{
+	"Activity": {
+		"prefix": "Activity",
+		"body": [
+			"<Activity mode={${1:visibility}}>",
+			"\t<${2:Feature} />",
+			"</Activity>"
+		]
+	}
+}
