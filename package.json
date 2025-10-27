@@ -4,7 +4,7 @@
   "displayName": "React Snippets",
   "description": "Only React 19+",
   "icon": "art/icon.png",
-  "version": "19.2.0",
+  "version": "19.2.1",
   "type": "module",
   "galleryBanner": {
     "color": "#ffffff",

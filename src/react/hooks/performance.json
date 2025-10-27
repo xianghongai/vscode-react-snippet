@@ -1,12 +1,12 @@
 {
 	"useMemo": {
-		"prefix": ["useMemo"],
+		"prefix": ["useMemo", "um"],
 		"body": [
 			"const ${1:result} = useMemo(() => ${3:heavyCalculation(input)}, [${2:input}]);"
 		]
 	},
 	"useCallback": {
-		"prefix": ["useCallback"],
+		"prefix": ["useCallback", "uc"],
 		"body": [
 			"const ${1:handler} = useCallback((${3:param}) => {",
 			"\t${4}",
@@ -14,7 +14,7 @@
 		]
 	},
 	"useDeferredValue": {
-		"prefix": ["useDeferredValue"],
+		"prefix": ["useDeferredValue", "udv"],
 		"body": [
 			"const deferred${1/(.*)/${1:/pascalcase}/} = useDeferredValue(${1:query});"
 		]

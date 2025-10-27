@@ -4,7 +4,28 @@
 		"body": ["import { useTranslation } from 'react-i18next';"]
 	},
 	"useTranslation (react-i18next)": {
-		"prefix": "useTranslation",
-		"body": ["const { t } = useTranslation(${1:['ns']});"]
+		"prefix": ["useTranslation", "ut"],
+		"body": ["const { t } = useTranslation(${1:['ns']});"],
+		"description": "The `useTranslation` is a Hook, It gets the `t` function and `i18n` instance to React Component."
+	},
+	"useTranslation t function": {
+		"prefix": "t",
+		"body": ["t('${1:key}');"]
+	},
+	"useTranslation t function (namespace)": {
+		"prefix": "tn",
+		"body": ["t('${2:key}', { ns: '${1:ns}' });"]
+	},
+	"Translation (render prop)": {
+		"prefix": "Translation",
+		"body": [
+			"<Translation ns={['${1:ns}']}>",
+			"{",
+			"\t(t) => <>$0</>",
+			"}",
+			"</Translation>",
+			""
+		],
+		"description": "The `Translation` is a render prop and gets the `t` function and `i18n` instance to React Component."
 	}
 }

@@ -1,18 +1,18 @@
 {
 	"useInsertionEffect": {
-		"prefix": "useInsertionEffect",
+		"prefix": ["useInsertionEffect", "uie"],
 		"body": ["useInsertionEffect(() => {", "\t$0", "});"]
 	},
 	"useLayoutEffect": {
-		"prefix": ["useLayoutEffect"],
+		"prefix": ["useLayoutEffect", "ule"],
 		"body": ["useLayoutEffect(() => {", "\t$0", "}, [${1}]);"]
 	},
 	"useEffect": {
-		"prefix": ["useEffect"],
+		"prefix": ["useEffect", "ue"],
 		"body": ["useEffect(() => {", "\t$0", "}, [${1}]);"]
 	},
 	"useEffect Cleanup": {
-		"prefix": ["useEffect-Cleanup"],
+		"prefix": ["useEffect-Cleanup", "uec"],
 		"body": [
 			"useEffect(() => {",
 			"\t$2",
@@ -24,7 +24,7 @@
 		]
 	},
 	"useEffectEvent": {
-		"prefix": "useEffectEvent",
+		"prefix": ["useEffectEvent", "uee"],
 		"body": [
 			"const on${1:EffectEvent} = useEffectEvent(($2) => {",
 			"\t$0",

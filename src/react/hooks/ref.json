@@ -1,10 +1,10 @@
 {
 	"useRef": {
-		"prefix": ["useRef"],
+		"prefix": ["useRef", "ur"],
 		"body": ["const ${1:feature}Ref = useRef(${2:null});"]
 	},
 	"useImperativeHandle": {
-		"prefix": "useImperativeHandle",
+		"prefix": ["useImperativeHandle", "uih"],
 		"body": [
 			"useImperativeHandle(${1:ref}, () => ({",
 			"\t${0}",
@@ -12,7 +12,7 @@
 		]
 	},
 	"forwardRef (Legacy API)": {
-		"prefix": ["forwardRef"],
+		"prefix": ["forwardRef", "fr"],
 		"body": [
 			"import { forwardRef } from 'react';",
 			"",
