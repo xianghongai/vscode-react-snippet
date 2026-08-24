@@ -6,6 +6,7 @@
   "icon": "art/icon.png",
   "version": "19.2.1",
   "type": "module",
+  "packageManager": "pnpm@11.23.0+sha512.f00082e5b283a199b74e079da28d155c008fe232f44c8a06ea7ddfa014ecf719fc362f790ecc67b28106ddac2afb24c49a9a079159da560b2ce7d1e98efd11af",
   "galleryBanner": {
     "color": "#ffffff",
     "theme": "dark"
@@ -20,7 +21,8 @@
     "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
   },
   "engines": {
-    "vscode": "^0.12.x"
+    "vscode": "^0.12.x",
+    "node": ">=24"
   },
   "categories": [
     "Snippets"
@@ -56,14 +58,14 @@
     "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
     "prebuild": "node main.js",
     "build": "vsce package",
-    "prepublish": "npm run build",
+    "prepublish": "pnpm run build",
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@vscode/vsce": "^3.6.0",
-    "glob": "^11.1.0",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "@types/node": "^24",
+    "@vscode/vsce": "^3.9.2",
+    "glob": "^13.0.6",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.6"
   }
 }

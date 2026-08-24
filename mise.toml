@@ -1,0 +1,6 @@
+[tools]
+node = "24"
+
+[settings]
+# pnpm version is read from package.json's "packageManager" field
+idiomatic_version_file_enable_tools = ["pnpm"]

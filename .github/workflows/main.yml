@@ -10,19 +10,23 @@ on:
   workflow_dispatch:
 
 name: Publish VS Code Extension — GitHub Action
+
+permissions:
+  contents: read
+
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
-          registry-url: https://registry.npmjs.org/
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup mise (Node.js + pnpm)
+        uses: jdx/mise-action@v4
 
       - name: Install the dependencies
-        run: pnpm i
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm run build
