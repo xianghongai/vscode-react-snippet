@@ -94,11 +94,33 @@ function Feature(props) {
 }
 ```
 
+`fc-ref` - React <strong><u style="color: red;">F</u></strong>unctional <strong><u style="color: red;">C</u></strong>omponent with <strong><u style="color: red;">R</u></strong>ef (TypeScript)
+
+Since React 19, `ref` is available as a regular prop, `forwardRef` is no longer needed.
+
+```typescript
+import type { Ref } from 'react';
+
+export interface FeatureProps {
+  ref?: Ref<HTMLDivElement>;
+
+}
+
+export default function Feature({ ref, ...props }: FeatureProps) {
+
+
+  return (
+
+  );
+}
+```
+
 - Functional Component
 - React API
   - `<Activity>`
   - `<Profiler>`
   - `<Suspense>`
+  - `<StrictMode>`
 
 ### (2). Hooks
 
@@ -116,6 +138,7 @@ const handler = useCallback((param) => {}, [dependencies]);
 - Ref Hooks
   - `useRef`
   - `useImperativeHandle`
+  - `ref` callback cleanup
 - Effect Hooks
   - `useEffect`
   - `useLayoutEffect`
@@ -130,6 +153,7 @@ const handler = useCallback((param) => {}, [dependencies]);
   - `useActionState`
   - `useSyncExternalStore`
   - `useOptimistic`
+  - `useId`
 - Form Hooks
   - `useFormStatus`
 
@@ -162,8 +186,16 @@ export default Feature;
   - `startTransition`
 - React DOM API
   - `createPortal`
+  - `flushSync`
+  - `preload`
+  - `preinit`
+  - `preloadModule`
+  - `preinitModule`
+  - `preconnect`
+  - `prefetchDNS`
 - Client React DOM API
   - `createRoot`
+  - `hydrateRoot`
 
 ## Related Snippets
 

@@ -1,0 +1,20 @@
+{
+	"hydrateRoot": {
+		"prefix": ["hydrateRoot", "hr"],
+		"body": [
+			"import { hydrateRoot } from 'react-dom/client';",
+			"import { StrictMode } from 'react';",
+			"import App from './App.tsx';",
+			"",
+			"const domNode = document.getElementById(${1:'root'});",
+			"",
+			"hydrateRoot(",
+			"\tdomNode,",
+			"\t<StrictMode>",
+			"\t\t<App />",
+			"\t</StrictMode>",
+			");"
+		],
+		"description": "Hydrate server-rendered HTML in `domNode`. Use `createRoot` instead for a client-only app.\n\n对服务端渲染出的 HTML 进行 hydration。纯客户端应用请改用 `createRoot`。"
+	}
+}

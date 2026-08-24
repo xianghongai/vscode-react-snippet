@@ -94,11 +94,33 @@ function Feature(props) {
 }
 ```
 
+`fc-ref` - React <strong><u style="color: red;">F</u></strong>unctional <strong><u style="color: red;">C</u></strong>omponent with <strong><u style="color: red;">R</u></strong>ef (TypeScript)
+
+React 19 起 `ref` 可作为普通 prop 传入，不再需要 `forwardRef`。
+
+```typescript
+import type { Ref } from 'react';
+
+export interface FeatureProps {
+  ref?: Ref<HTMLDivElement>;
+
+}
+
+export default function Feature({ ref, ...props }: FeatureProps) {
+
+
+  return (
+
+  );
+}
+```
+
 - Functional Component
 - React API
   - `<Activity>`
   - `<Profiler>`
   - `<Suspense>`
+  - `<StrictMode>`
 
 ### 常用 Hooks
 
@@ -116,6 +138,7 @@ const handler = useCallback((param) => {}, [dependencies]);
 - Ref Hook
   - `useRef`
   - `useImperativeHandle`
+  - `ref` callback cleanup
 - Effect Hook
   - `useEffect`
   - `useLayoutEffect`
@@ -130,6 +153,7 @@ const handler = useCallback((param) => {}, [dependencies]);
   - `useActionState`
   - `useSyncExternalStore`
   - `useOptimistic`
+  - `useId`
 - Form Hooks
   - `useFormStatus`
 
@@ -162,8 +186,16 @@ export default Feature;
   - `startTransition`
 - React DOM API
   - `createPortal`
+  - `flushSync`
+  - `preload`
+  - `preinit`
+  - `preloadModule`
+  - `preinitModule`
+  - `preconnect`
+  - `prefetchDNS`
 - Client React DOM API
   - `createRoot`
+  - `hydrateRoot`
 
 ## 相关 Snippets
 

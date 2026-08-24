@@ -42,5 +42,10 @@
 			");",
 			""
 		]
+	},
+	"useId": {
+		"prefix": ["useId", "uid"],
+		"body": ["const ${1:feature}Id = useId();"],
+		"description": "Generate a unique, stable ID for accessibility attributes, safe across server and client rendering. Do NOT use it for list keys.\n\n生成用于无障碍属性的唯一且稳定的 ID，在服务端与客户端渲染间保持一致。不要用它作为列表的 key。"
 	}
 }
