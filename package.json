@@ -62,7 +62,7 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/node": "^24",
+    "@types/node": "^24.13.3",
     "@vscode/vsce": "^3.9.2",
     "glob": "^13.0.6",
     "nodemon": "^3.1.14",
