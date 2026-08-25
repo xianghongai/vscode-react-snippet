@@ -28,8 +28,5 @@ jobs:
       - name: Install the dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: pnpm run build
-
       - name: Publish
-        run: pnpm run publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
+        run: pnpm exec vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}

@@ -4,9 +4,9 @@
   "displayName": "React Snippets",
   "description": "Only React 19+",
   "icon": "art/icon.png",
-  "version": "19.2.2",
+  "version": "19.2.3",
   "type": "module",
-  "packageManager": "pnpm@11.23.0+sha512.f00082e5b283a199b74e079da28d155c008fe232f44c8a06ea7ddfa014ecf719fc362f790ecc67b28106ddac2afb24c49a9a079159da560b2ce7d1e98efd11af",
+  "packageManager": "pnpm@11.23.0",
   "galleryBanner": {
     "color": "#ffffff",
     "theme": "dark"
@@ -21,7 +21,7 @@
     "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
   },
   "engines": {
-    "vscode": "^0.12.x",
+    "vscode": "^1.0.0",
     "node": ">=24"
   },
   "categories": [
@@ -57,8 +57,8 @@
     "format": "prettier --write --cache .",
     "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
     "prebuild": "node main.js",
+    "vscode:prepublish": "node main.js",
     "build": "vsce package",
-    "prepublish": "pnpm run build",
     "publish": "vsce publish"
   },
   "devDependencies": {

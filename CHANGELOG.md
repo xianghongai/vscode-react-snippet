@@ -4,6 +4,16 @@ All notable changes to the **React Snippets** extension are documented in this f
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [19.2.3] - 2026-08-25
+
+Development and packaging only; the published snippets are unchanged.
+
+- `main.js` rewritten: duplicate snippet names now fail the build instead of being silently overwritten
+- `.vscodeignore` switched to an allow-list
+- Added a `vscode:prepublish` hook so `snippets/` is always regenerated before packaging
+- Dropped the redundant `prepublish` script and the CI `Build` step
+- `engines.vscode` corrected from `^0.12.x` to `^1.0.0`
+
 ## [19.2.2] - 2026-08-24
 
 Targets React 19.2. This release fills in the React 19 APIs that were still missing from the snippet set.
@@ -73,12 +83,5 @@ Development-only; no effect on the published snippets.
 ### Changed
 
 - Major version now corresponds to the React release the snippets target.
-
-[19.2.2]: https://github.com/xianghongai/vscode-react-snippet/compare/v19.2.1...v19.2.2
-[19.2.1]: https://github.com/xianghongai/vscode-react-snippet/compare/v19.2.0...v19.2.1
-[19.2.0]: https://github.com/xianghongai/vscode-react-snippet/compare/v19.1.0...v19.2.0
-[19.1.0]: https://github.com/xianghongai/vscode-react-snippet/compare/v18.0.1...v19.1.0
-[18.0.1]: https://github.com/xianghongai/vscode-react-snippet/compare/v18.0.0...v18.0.1
-[18.0.0]: https://github.com/xianghongai/vscode-react-snippet/compare/v16.0.0...v18.0.0
 
 Releases before v18.0.0 predate this changelog.

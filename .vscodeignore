@@ -1,0 +1,18 @@
+# 全部排除，再按需放行
+# Exclude everything, then allow-list what ships.
+#
+# 这是一个纯 snippets 扩展，没有运行时依赖，产物只有 snippets/ 与几个元文件。
+# 白名单写法可确保新增的根文件默认不会被打进包。
+**
+
+# ── 扩展本体 / Extension ──────────
+!package.json
+!snippets/**
+
+# ── Marketplace 展示 / Listing ────
+# README 内的相对链接（图片、README-CN.md 等）会被 vsce 重写为 GitHub URL，
+# 因此素材与副文档无需打包，只保留 package.json 的 icon 字段所引用的图标。
+!README.md
+!CHANGELOG.md
+!LICENSE
+!art/icon.png
