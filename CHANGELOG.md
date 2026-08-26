@@ -4,6 +4,10 @@ All notable changes to the **React Snippets** extension are documented in this f
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [19.2.4] - 2026-08-26
+
+- Fixed the Marketplace badges
+
 ## [19.2.3] - 2026-08-25
 
 Development and packaging only; the published snippets are unchanged.
