@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 
 name: Publish VS Code Extension — GitHub Action
+run-name: 'Release: ${{ github.ref_name }}'
 
 permissions:
   contents: read
@@ -29,4 +30,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish
-        run: pnpm exec vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
+        run: pnpm run publish
+        env:
+          VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
