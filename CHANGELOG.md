@@ -4,6 +4,14 @@ All notable changes to the **React Snippets** extension are documented in this f
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [19.2.5] - 2026-09-01
+
+The `react-i18next` snippets move to [React Ecosystem Snippets](https://github.com/xianghongai/vscode-react-ecosystem-snippets), which covers i18next initialization, plurals, `Trans`, language switching and the TypeScript resource augmentations as well. Keeping one set in each extension would have offered the same keys twice.
+
+### Removed
+
+- `react-i18next` snippets: `import-useTranslation`, `useTranslation` / `ut`, `t`, `tn`, `Translation`.
+
 ## [19.2.4] - 2026-08-26
 
 - Fixed the Marketplace badges

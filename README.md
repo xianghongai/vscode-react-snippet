@@ -199,8 +199,6 @@ export default Feature;
 
 If you need `react-router`, please install [React Router Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-react-router-snippets).
 
-If you need `zustand` + `immer`, please install [Zustand + Immer Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-zustand-immer-snippets).
-
 ## License
 
 MIT License

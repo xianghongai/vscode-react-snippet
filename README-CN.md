@@ -1,6 +1,4 @@
-<p>
-  <h1 align="center">React Snippet (Visual Studio Code)</h1>
-</p>
+# React Snippet (Visual Studio Code)
 
 <p>
   <a href="https://github.com/xianghongai/vscode-react-snippet">
@@ -200,8 +198,6 @@ export default Feature;
 ## 相关 Snippets
 
 如果您需要 `react-router`，请安装 [React Router Snippets](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-react-router-snippets)；
-
-如果您需要 `zustand` + `immer`，请安装 [Zustand + Immer](https://marketplace.visualstudio.com/items?itemName=NicholasHsiang.vscode-zustand-immer-snippets)。
 
 ## License
 

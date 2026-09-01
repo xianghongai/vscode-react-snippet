@@ -4,7 +4,7 @@
   "displayName": "React Snippets",
   "description": "Only React 19+",
   "icon": "art/icon.png",
-  "version": "19.2.4",
+  "version": "19.2.5",
   "type": "module",
   "packageManager": "pnpm@11.23.0",
   "galleryBanner": {
@@ -54,18 +54,20 @@
     ]
   },
   "scripts": {
-    "format": "prettier --write --cache .",
-    "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
-    "prebuild": "node main.js",
-    "vscode:prepublish": "node main.js",
     "build": "vsce package",
-    "publish": "vsce publish"
+    "clean": "rimraf --glob \"*.vsix\" snippets",
+    "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
+    "format": "prettier --write --cache .",
+    "prebuild": "node main.js",
+    "publish": "vsce publish",
+    "vscode:prepublish": "pnpm run clean && node main.js"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
     "@vscode/vsce": "^3.9.2",
     "glob": "^13.0.6",
     "nodemon": "^3.1.14",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.6",
+    "rimraf": "^6.1.3"
   }
 }
