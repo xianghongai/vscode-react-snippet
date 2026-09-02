@@ -1,6 +1,7 @@
 {
 	"useContext": {
 		"prefix": ["useContext"],
-		"body": ["const ${1:featureContext} = useContext(${2:FeatureContext});"]
+		"body": ["const ${1:featureContext} = useContext(${2:FeatureContext});"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

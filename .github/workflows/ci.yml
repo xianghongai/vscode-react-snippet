@@ -1,11 +1,7 @@
 on:
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
   push:
     tags:
-      - '*'
+      - 'v*'
 
   workflow_dispatch:
 
@@ -28,6 +24,15 @@ jobs:
 
       - name: Install the dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Format
+        run: pnpm run format:check
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Test
+        run: pnpm run test
 
       - name: Publish
         run: pnpm run publish

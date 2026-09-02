@@ -1,12 +1,9 @@
 {
 	"Profiler": {
 		"prefix": "Profiler",
-		"body": [
-			"<Profiler id=\"${1:Feature}\" onRender={onRender}>",
-			"\t<${1:Feature} />$0",
-			"</Profiler>"
-		],
-		"description": "Measure rendering performance of a React tree programmatically.\n\n通过编程方式测量 React 树的渲染性能。"
+		"body": ["<Profiler id=\"${1:Feature}\" onRender={onRender}>", "\t<${1:Feature} />$0", "</Profiler>"],
+		"description": "Measure rendering performance of a React tree programmatically.\n\n通过编程方式测量 React 树的渲染性能。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"onRender": {
 		"prefix": "onRender",
@@ -14,6 +11,7 @@
 			"function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {",
 			"\tconsole.log(\"🚀 ~ onRender ~ id:%o, phase:%o, actualDuration:%o, baseDuration:%o, startTime:%o, commitTime:%o\", id, phase, actualDuration, baseDuration, startTime, commitTime);",
 			"}"
-		]
+		],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

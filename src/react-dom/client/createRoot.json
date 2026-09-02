@@ -13,6 +13,7 @@
 			"\t\t<App />",
 			"\t</StrictMode>",
 			");"
-		]
+		],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

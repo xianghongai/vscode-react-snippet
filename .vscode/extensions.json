@@ -1,0 +1,5 @@
+{
+  // settings.json 把 JSON / TypeScript / Markdown 的默认格式化器指向了这个扩展，
+  // 它同时提供 oxlint 诊断，与仓库的 pnpm run format / lint 用的是同一套规则。
+  "recommendations": ["oxc.oxc-vscode"]
+}

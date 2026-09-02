@@ -2,6 +2,7 @@
 	"useFormStatus": {
 		"prefix": "useFormStatus",
 		"body": ["const ${1:status} = useFormStatus();"],
-		"description": "`const { pending, data, method, action } = useFormStatus();`\n"
+		"description": "`const { pending, data, method, action } = useFormStatus();`\n",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

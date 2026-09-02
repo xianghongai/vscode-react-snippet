@@ -15,6 +15,7 @@
 			"\t</StrictMode>",
 			");"
 		],
-		"description": "Hydrate server-rendered HTML in `domNode`. Use `createRoot` instead for a client-only app.\n\n对服务端渲染出的 HTML 进行 hydration。纯客户端应用请改用 `createRoot`。"
+		"description": "Hydrate server-rendered HTML in `domNode`. Use `createRoot` instead for a client-only app.\n\n对服务端渲染出的 HTML 进行 hydration。纯客户端应用请改用 `createRoot`。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

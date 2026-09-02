@@ -1,28 +1,19 @@
 {
 	"useRef": {
 		"prefix": ["useRef", "ur"],
-		"body": ["const ${1:feature}Ref = useRef(${2:null});"]
+		"body": ["const ${1:feature}Ref = useRef(${2:null});"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"useImperativeHandle": {
 		"prefix": ["useImperativeHandle", "uih"],
-		"body": [
-			"useImperativeHandle(${1:ref}, () => ({",
-			"\t${0}",
-			"}), [${2:dependencies}]);"
-		]
+		"body": ["useImperativeHandle(${1:ref}, () => ({", "\t${0}", "}), [${2:dependencies}]);"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"ref Callback Cleanup": {
 		"prefix": ["ref-cleanup", "refc"],
-		"body": [
-			"ref={(${1:node}) => {",
-			"\t$2",
-			"",
-			"\treturn () => {",
-			"\t\t$3",
-			"\t};",
-			"}}"
-		],
-		"description": "React 19 supports returning a cleanup function from a `ref` callback; React calls it when the element is removed from the DOM. When a cleanup function is returned, React will NOT call the ref with `null` on unmount.\n\nReact 19 支持在 `ref` 回调中返回清理函数，元素从 DOM 移除时 React 会调用它。一旦返回了清理函数，React 在卸载时便不再以 `null` 调用该 ref。"
+		"body": ["ref={(${1:node}) => {", "\t$2", "", "\treturn () => {", "\t\t$3", "\t};", "}}"],
+		"description": "React 19 supports returning a cleanup function from a `ref` callback; React calls it when the element is removed from the DOM. When a cleanup function is returned, React will NOT call the ref with `null` on unmount.\n\nReact 19 支持在 `ref` 回调中返回清理函数，元素从 DOM 移除时 React 会调用它。一旦返回了清理函数，React 在卸载时便不再以 `null` 调用该 ref。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"forwardRef (Legacy API)": {
 		"prefix": ["forwardRef", "fr"],
@@ -38,6 +29,7 @@
 			"});",
 			"",
 			"export default $1;"
-		]
+		],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

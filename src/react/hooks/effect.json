@@ -1,34 +1,27 @@
 {
 	"useInsertionEffect": {
 		"prefix": ["useInsertionEffect", "uie"],
-		"body": ["useInsertionEffect(() => {", "\t$0", "});"]
+		"body": ["useInsertionEffect(() => {", "\t$0", "});"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"useLayoutEffect": {
 		"prefix": ["useLayoutEffect", "ule"],
-		"body": ["useLayoutEffect(() => {", "\t$0", "}, [${1}]);"]
+		"body": ["useLayoutEffect(() => {", "\t$0", "}, [${1}]);"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"useEffect": {
 		"prefix": ["useEffect", "ue"],
-		"body": ["useEffect(() => {", "\t$0", "}, [${1}]);"]
+		"body": ["useEffect(() => {", "\t$0", "}, [${1}]);"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"useEffect Cleanup": {
 		"prefix": ["useEffect-Cleanup", "uec"],
-		"body": [
-			"useEffect(() => {",
-			"\t$2",
-			"",
-			"\treturn () => {",
-			"\t\t$3",
-			"\t}",
-			"}, [${1}])"
-		]
+		"body": ["useEffect(() => {", "\t$2", "", "\treturn () => {", "\t\t$3", "\t}", "}, [${1}])"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	},
 	"useEffectEvent": {
 		"prefix": ["useEffectEvent", "uee"],
-		"body": [
-			"const on${1:EffectEvent} = useEffectEvent(($2) => {",
-			"\t$0",
-			"});"
-		]
+		"body": ["const on${1:EffectEvent} = useEffectEvent(($2) => {", "\t$0", "});"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

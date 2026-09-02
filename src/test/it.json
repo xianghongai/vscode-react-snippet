@@ -29,6 +29,7 @@
 			"  });",
 			"});",
 			""
-		]
+		],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

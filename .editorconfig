@@ -7,10 +7,10 @@ root = true
 charset = utf-8
 indent_style = space
 indent_size = 2
-end_of_line = lf                # lf, cr, crlf
+end_of_line = lf
 insert_final_newline = true     # 空行结尾
 trim_trailing_whitespace = true # 删除换行符之前的空格字符
 
-[*.md]
-insert_final_newline = false
-trim_trailing_whitespace = false
+[src/**/*.json]
+indent_style = tab
+indent_size = 2

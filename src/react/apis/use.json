@@ -1,6 +1,7 @@
 {
 	"use": {
 		"prefix": "use",
-		"body": ["const ${1:value} = use(${2:PromiseOrContext});"]
+		"body": ["const ${1:value} = use(${2:PromiseOrContext});"],
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }

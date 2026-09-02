@@ -1,5 +1,5 @@
 {
-	"memo": {
+	"memo JavaScript": {
 		"prefix": "memo",
 		"body": [
 			"import { memo } from 'react';",
@@ -13,9 +13,10 @@
 			"});",
 			"",
 			"export default $1;"
-		]
+		],
+		"scope": "javascript,javascriptreact"
 	},
-	"memo arePropsEqual": {
+	"memo arePropsEqual JavaScript": {
 		"prefix": "memo-arePropsEqual",
 		"body": [
 			"import { memo } from 'react';",
@@ -34,6 +35,7 @@
 			"",
 			"export default $1;"
 		],
-		"description": "memo"
+		"description": "memo",
+		"scope": "javascript,javascriptreact"
 	}
 }

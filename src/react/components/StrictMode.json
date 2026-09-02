@@ -2,6 +2,7 @@
 	"StrictMode": {
 		"prefix": ["StrictMode", "sm"],
 		"body": ["<StrictMode>", "\t${1:<App />}", "</StrictMode>"],
-		"description": "Development-only checks for the wrapped tree: double rendering to surface impure renders, double running Effects to surface missing cleanup, double running ref callbacks to surface missing ref cleanup, and warnings for deprecated APIs. No effect in production.\n\n仅在开发环境对被包裹的子树启用额外检查：重复渲染以暴露不纯的渲染、重复执行 Effect 以暴露缺失的清理函数、重复执行 ref 回调以暴露缺失的 ref 清理函数，并对已废弃 API 发出警告。生产环境不生效。"
+		"description": "Development-only checks for the wrapped tree: double rendering to surface impure renders, double running Effects to surface missing cleanup, double running ref callbacks to surface missing ref cleanup, and warnings for deprecated APIs. No effect in production.\n\n仅在开发环境对被包裹的子树启用额外检查：重复渲染以暴露不纯的渲染、重复执行 Effect 以暴露缺失的清理函数、重复执行 ref 回调以暴露缺失的 ref 清理函数，并对已废弃 API 发出警告。生产环境不生效。",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact"
 	}
 }
