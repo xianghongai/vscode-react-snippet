@@ -1,7 +1,8 @@
 {
-	"flushSync": {
-		"prefix": ["flushSync", "fs"],
-		"body": ["flushSync(() => {", "\t$0", "});"],
-		"description": "`import { flushSync } from 'react-dom';`\n\nForce React to flush pending updates synchronously, so the DOM is updated by the time the call returns. Uncommon, and can hurt performance — mainly for third-party integrations such as `onbeforeprint`.\n\n强制 React 同步刷新更新，调用返回时 DOM 已更新。此 API 不常用且可能损害性能，主要用于 `onbeforeprint` 等第三方集成场景。"
-	}
+  "flushSync": {
+    "prefix": ["flushSync", "fs"],
+    "body": ["flushSync(() => {", "\t$0", "});"],
+    "description": "`import { flushSync } from 'react-dom';`\n\nForce React to flush pending updates synchronously, so the DOM is updated by the time the call returns. Uncommon, and can hurt performance — mainly for third-party integrations such as `onbeforeprint`.\n\n强制 React 同步刷新更新，调用返回时 DOM 已更新。此 API 不常用且可能损害性能，主要用于 `onbeforeprint` 等第三方集成场景。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  }
 }

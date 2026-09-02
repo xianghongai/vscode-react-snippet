@@ -1,57 +1,60 @@
 {
-	"React Functional Component (export default)": {
-		"prefix": "fc",
-		"body": [
-			"export interface ${1}Props {",
-			"\t$3",
-			"}",
-			"",
-			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}: ${1}Props) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$4",
-			"\t);",
-			"}",
-			""
-		]
-	},
-	"React Functional Component": {
-		"prefix": "rfc",
-		"body": [
-			"interface $1Props {",
-			"\t$3",
-			"}",
-			"",
-			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}: $1Props) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$4",
-			"\t);",
-			"}",
-			""
-		]
-	},
-	"React Functional Component with Ref": {
-		"prefix": ["fc-ref", "fcr"],
-		"body": [
-			"import type { Ref } from 'react';",
-			"",
-			"export interface ${1}Props {",
-			"\tref?: Ref<${3:HTMLDivElement}>;",
-			"\t$4",
-			"}",
-			"",
-			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({ ref, ...${2:props} }: ${1}Props) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$5",
-			"\t);",
-			"}",
-			""
-		],
-		"description": "React 19: `ref` is available as a regular prop for function components, `forwardRef` is no longer needed and will eventually be removed.\n\nReact 19：函数组件可直接把 `ref` 当作普通 prop 接收，不再需要 `forwardRef`（该 API 后续会被移除）。"
-	}
+  "React Functional Component (export default) TypeScript": {
+    "prefix": "fc",
+    "body": [
+      "export interface ${1}Props {",
+      "\t$3",
+      "}",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}: ${1}Props) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$4",
+      "\t);",
+      "}",
+      ""
+    ],
+    "scope": "typescript,typescriptreact"
+  },
+  "React Functional Component TypeScript": {
+    "prefix": "rfc",
+    "body": [
+      "interface $1Props {",
+      "\t$3",
+      "}",
+      "",
+      "function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}: $1Props) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$4",
+      "\t);",
+      "}",
+      ""
+    ],
+    "scope": "typescript,typescriptreact"
+  },
+  "React Functional Component with Ref TypeScript": {
+    "prefix": ["fc-ref", "fcr"],
+    "body": [
+      "import type { Ref } from 'react';",
+      "",
+      "export interface ${1}Props {",
+      "\tref?: Ref<${3:HTMLDivElement}>;",
+      "\t$4",
+      "}",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({ ref, ...${2:props} }: ${1}Props) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$5",
+      "\t);",
+      "}",
+      ""
+    ],
+    "description": "React 19: `ref` is available as a regular prop for function components, `forwardRef` is no longer needed and will eventually be removed.\n\nReact 19：函数组件可直接把 `ref` 当作普通 prop 接收，不再需要 `forwardRef`（该 API 后续会被移除）。",
+    "scope": "typescript,typescriptreact"
+  }
 }

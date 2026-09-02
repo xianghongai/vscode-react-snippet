@@ -4,6 +4,12 @@ All notable changes to the **React Snippets** extension are documented in this f
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [19.2.6] - 2026-09-02
+
+- Renamed the paired JSX/TSX variants of five snippets — `memo`, `memo arePropsEqual`, `React Functional Component`, `React Functional Component (export default)` and `React Functional Component with Ref` — to `… JavaScript` and `… TypeScript`. They used to share a name, which only worked while they shipped in two separate per-language files. **The prefixes are unchanged**; only the label shown beside the prefix in the completion list differs
+- Snippets now ship as a single `.code-snippets` file, each declaring its own languages; which snippet reaches which language is unchanged
+- `engines.vscode` raised to `^1.100.0`
+
 ## [19.2.5] - 2026-09-01
 
 The `react-i18next` snippets move to [React Ecosystem Snippets](https://github.com/xianghongai/vscode-react-ecosystem-snippets), which covers i18next initialization, plurals, `Trans`, language switching and the TypeScript resource augmentations as well. Keeping one set in each extension would have offered the same keys twice.

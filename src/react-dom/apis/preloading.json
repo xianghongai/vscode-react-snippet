@@ -1,47 +1,48 @@
 {
-	"preload": {
-		"prefix": "preload",
-		"body": [
-			"preload('${1:https://example.com/font.woff2}', { as: '${2|font,style,image,script,fetch,audio,video,track,document,embed,object,worker|}' });"
-		],
-		"description": "`import { preload } from 'react-dom';`\n\nDownload a resource ahead of time without executing it.\n`crossOrigin` is required when `as: 'fetch'`.\n\n提前下载资源但不执行它。`as: 'fetch'` 时必须提供 `crossOrigin`。"
-	},
-	"preinit": {
-		"prefix": "preinit",
-		"body": [
-			"preinit('${1:https://example.com/script.js}', { as: 'script' });"
-		],
-		"description": "`import { preinit } from 'react-dom';`\n\nDownload AND execute a script eagerly. Use `preload` if you only want to download it.\n\n提前下载并执行脚本。若只需下载不执行，请使用 `preload`。"
-	},
-	"preinit Stylesheet": {
-		"prefix": "preinit-style",
-		"body": [
-			"preinit('${1:https://example.com/style.css}', { as: 'style', precedence: '${2|reset,low,medium,high|}' });"
-		],
-		"description": "`import { preinit } from 'react-dom';`\n\n`precedence` is required for stylesheets, it controls the insertion order in the document.\n\n样式表必须提供 `precedence`，它决定样式在文档中的插入顺序。"
-	},
-	"preloadModule": {
-		"prefix": "preloadModule",
-		"body": [
-			"preloadModule('${1:https://example.com/module.js}', { as: 'script' });"
-		],
-		"description": "`import { preloadModule } from 'react-dom';`\n\nDownload an ESM module ahead of time without evaluating it.\n\n提前下载 ESM 模块但不执行它。"
-	},
-	"preinitModule": {
-		"prefix": "preinitModule",
-		"body": [
-			"preinitModule('${1:https://example.com/module.js}', { as: 'script' });"
-		],
-		"description": "`import { preinitModule } from 'react-dom';`\n\nDownload AND evaluate an ESM module eagerly. Use `preloadModule` if you only want to download it.\n\n提前下载并执行 ESM 模块。若只需下载不执行，请使用 `preloadModule`。"
-	},
-	"preconnect": {
-		"prefix": "preconnect",
-		"body": ["preconnect('${1:https://example.com}');"],
-		"description": "`import { preconnect } from 'react-dom';`\n\nEagerly open a connection to a server you expect to load resources from. Prefer `prefetchDNS` when connecting to many domains speculatively.\n\n提前与目标服务器建立连接。若需要推测性地连接大量域名，请优先使用 `prefetchDNS`。"
-	},
-	"prefetchDNS": {
-		"prefix": "prefetchDNS",
-		"body": ["prefetchDNS('${1:https://example.com}');"],
-		"description": "`import { prefetchDNS } from 'react-dom';`\n\nEagerly look up the IP of a server you expect to load resources from. Cheaper than `preconnect`.\n\n提前解析目标服务器的 IP，开销比 `preconnect` 更低。"
-	}
+  "preload": {
+    "prefix": "preload",
+    "body": [
+      "preload('${1:https://example.com/font.woff2}', { as: '${2|font,style,image,script,fetch,audio,video,track,document,embed,object,worker|}' });"
+    ],
+    "description": "`import { preload } from 'react-dom';`\n\nDownload a resource ahead of time without executing it.\n`crossOrigin` is required when `as: 'fetch'`.\n\n提前下载资源但不执行它。`as: 'fetch'` 时必须提供 `crossOrigin`。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "preinit": {
+    "prefix": "preinit",
+    "body": ["preinit('${1:https://example.com/script.js}', { as: 'script' });"],
+    "description": "`import { preinit } from 'react-dom';`\n\nDownload AND execute a script eagerly. Use `preload` if you only want to download it.\n\n提前下载并执行脚本。若只需下载不执行，请使用 `preload`。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "preinit Stylesheet": {
+    "prefix": "preinit-style",
+    "body": [
+      "preinit('${1:https://example.com/style.css}', { as: 'style', precedence: '${2|reset,low,medium,high|}' });"
+    ],
+    "description": "`import { preinit } from 'react-dom';`\n\n`precedence` is required for stylesheets, it controls the insertion order in the document.\n\n样式表必须提供 `precedence`，它决定样式在文档中的插入顺序。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "preloadModule": {
+    "prefix": "preloadModule",
+    "body": ["preloadModule('${1:https://example.com/module.js}', { as: 'script' });"],
+    "description": "`import { preloadModule } from 'react-dom';`\n\nDownload an ESM module ahead of time without evaluating it.\n\n提前下载 ESM 模块但不执行它。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "preinitModule": {
+    "prefix": "preinitModule",
+    "body": ["preinitModule('${1:https://example.com/module.js}', { as: 'script' });"],
+    "description": "`import { preinitModule } from 'react-dom';`\n\nDownload AND evaluate an ESM module eagerly. Use `preloadModule` if you only want to download it.\n\n提前下载并执行 ESM 模块。若只需下载不执行，请使用 `preloadModule`。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "preconnect": {
+    "prefix": "preconnect",
+    "body": ["preconnect('${1:https://example.com}');"],
+    "description": "`import { preconnect } from 'react-dom';`\n\nEagerly open a connection to a server you expect to load resources from. Prefer `prefetchDNS` when connecting to many domains speculatively.\n\n提前与目标服务器建立连接。若需要推测性地连接大量域名，请优先使用 `prefetchDNS`。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  },
+  "prefetchDNS": {
+    "prefix": "prefetchDNS",
+    "body": ["prefetchDNS('${1:https://example.com}');"],
+    "description": "`import { prefetchDNS } from 'react-dom';`\n\nEagerly look up the IP of a server you expect to load resources from. Cheaper than `preconnect`.\n\n提前解析目标服务器的 IP，开销比 `preconnect` 更低。",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  }
 }

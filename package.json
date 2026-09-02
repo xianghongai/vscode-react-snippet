@@ -1,73 +1,63 @@
 {
   "name": "vscode-react-snippet",
-  "publisher": "NicholasHsiang",
   "displayName": "React Snippets",
+  "version": "19.2.6",
   "description": "Only React 19+",
-  "icon": "art/icon.png",
-  "version": "19.2.5",
-  "type": "module",
-  "packageManager": "pnpm@11.23.0",
-  "galleryBanner": {
-    "color": "#ffffff",
-    "theme": "dark"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xianghongai/vscode-react-snippet/issues"
-  },
-  "homepage": "https://github.com/xianghongai/vscode-react-snippet/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
-  },
-  "engines": {
-    "vscode": "^1.0.0",
-    "node": ">=24"
-  },
   "categories": [
     "Snippets"
   ],
   "keywords": [
     "React",
-    "Snippet",
+    "React Code Snippets",
     "React Snippets",
-    "React Code Snippets"
+    "Snippet"
   ],
+  "homepage": "https://github.com/xianghongai/vscode-react-snippet/",
+  "bugs": {
+    "url": "https://github.com/xianghongai/vscode-react-snippet/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xianghongai/vscode-react-snippet/blob/master/README.md"
+  },
+  "publisher": "NicholasHsiang",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "clean": "rimraf --glob \"*.vsix\" snippets",
+    "dev": "node --watch-path=src scripts/build.ts",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint scripts tests",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies",
+    "test": "vitest run",
+    "vscode:prepublish": "pnpm run clean && pnpm run lint && pnpm run test && pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@vscode/vsce": "3.9.2",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "picocolors": "^1.1.1",
+    "rimraf": "^6.1.3",
+    "vitest": "4.1.11"
+  },
   "contributes": {
     "snippets": [
       {
-        "language": "javascript",
-        "path": "./snippets/jsx.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/tsx.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/jsx.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/tsx.json"
+        "path": "./snippets/index.code-snippets"
       }
     ]
   },
-  "scripts": {
-    "build": "vsce package",
-    "clean": "rimraf --glob \"*.vsix\" snippets",
-    "dev": "nodemon --watch src -e json -x 'pnpm run prebuild'",
-    "format": "prettier --write --cache .",
-    "prebuild": "node main.js",
-    "publish": "vsce publish",
-    "vscode:prepublish": "pnpm run clean && node main.js"
+  "icon": "art/icon.png",
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "dark"
   },
-  "devDependencies": {
-    "@types/node": "^24.13.3",
-    "@vscode/vsce": "^3.9.2",
-    "glob": "^13.0.6",
-    "nodemon": "^3.1.14",
-    "prettier": "^3.9.6",
-    "rimraf": "^6.1.3"
-  }
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "packageManager": "pnpm@11.25.0"
 }

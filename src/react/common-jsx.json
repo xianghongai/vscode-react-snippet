@@ -1,42 +1,45 @@
 {
-	"React Functional Component (export default)": {
-		"prefix": "fc",
-		"body": [
-			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$4",
-			"\t);",
-			"}",
-			""
-		]
-	},
-	"React Functional Component": {
-		"prefix": "rfc",
-		"body": [
-			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$4",
-			"\t);",
-			"}",
-			""
-		]
-	},
-	"React Functional Component with Ref": {
-		"prefix": ["fc-ref", "fcr"],
-		"body": [
-			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({ ref, ...${2:props} }) {",
-			"\t$0",
-			"",
-			"\treturn (",
-			"\t\t$3",
-			"\t);",
-			"}",
-			""
-		],
-		"description": "React 19: `ref` is available as a regular prop for function components, `forwardRef` is no longer needed and will eventually be removed.\n\nReact 19：函数组件可直接把 `ref` 当作普通 prop 接收，不再需要 `forwardRef`（该 API 后续会被移除）。"
-	}
+  "React Functional Component (export default) JavaScript": {
+    "prefix": "fc",
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$4",
+      "\t);",
+      "}",
+      ""
+    ],
+    "scope": "javascript,javascriptreact"
+  },
+  "React Functional Component JavaScript": {
+    "prefix": "rfc",
+    "body": [
+      "function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}(${2:props}) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$4",
+      "\t);",
+      "}",
+      ""
+    ],
+    "scope": "javascript,javascriptreact"
+  },
+  "React Functional Component with Ref JavaScript": {
+    "prefix": ["fc-ref", "fcr"],
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}}({ ref, ...${2:props} }) {",
+      "\t$0",
+      "",
+      "\treturn (",
+      "\t\t$3",
+      "\t);",
+      "}",
+      ""
+    ],
+    "description": "React 19: `ref` is available as a regular prop for function components, `forwardRef` is no longer needed and will eventually be removed.\n\nReact 19：函数组件可直接把 `ref` 当作普通 prop 接收，不再需要 `forwardRef`（该 API 后续会被移除）。",
+    "scope": "javascript,javascriptreact"
+  }
 }

@@ -1,18 +1,19 @@
 {
-	"createRoot": {
-		"prefix": ["createRoot", "cr"],
-		"body": [
-			"import { createRoot } from 'react-dom/client';",
-			"import App from './App.tsx';",
-			"",
-			"const domNode = document.getElementById(${1:'root'});",
-			"const root = createRoot(domNode);",
-			"",
-			"root.render(",
-			"\t<StrictMode>",
-			"\t\t<App />",
-			"\t</StrictMode>",
-			");"
-		]
-	}
+  "createRoot": {
+    "prefix": ["createRoot", "cr"],
+    "body": [
+      "import { createRoot } from 'react-dom/client';",
+      "import App from './App.tsx';",
+      "",
+      "const domNode = document.getElementById(${1:'root'});",
+      "const root = createRoot(domNode);",
+      "",
+      "root.render(",
+      "\t<StrictMode>",
+      "\t\t<App />",
+      "\t</StrictMode>",
+      ");"
+    ],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  }
 }

@@ -1,6 +1,7 @@
 {
-	"createPortal": {
-		"prefix": ["createPortal", "cp"],
-		"body": ["createPortal(${1:<Content />}, ${2:document.body})"]
-	}
+  "createPortal": {
+    "prefix": ["createPortal", "cp"],
+    "body": ["createPortal(${1:<Content />}, ${2:document.body})"],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact"
+  }
 }

@@ -10,9 +10,11 @@
 !snippets/**
 
 # ── Marketplace 展示 / Listing ────
-# README 内的相对链接（图片、README-CN.md 等）会被 vsce 重写为 GitHub URL，
-# 因此素材与副文档无需打包，只保留 package.json 的 icon 字段所引用的图标。
+# README 内的相对图片链接会被 vsce 重写为 GitHub raw URL
+# （./art/assets/x.png → https://github.com/<owner>/<repo>/raw/HEAD/art/assets/x.png）
+# 因此素材无需打包，只保留 package.json 的 icon 字段所引用的图标。
 !README.md
+!README-CN.md
 !CHANGELOG.md
 !LICENSE
 !art/icon.png
