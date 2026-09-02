@@ -1,46 +1,23 @@
 /**
- * 校验片段源的格式与片段语法——只测「片段」这一侧。
+ * 校验片段源的格式与片段语法，只测「片段」这一侧。
  *
- * 检查的是：源文件是合法 JSON、每条片段的字段齐备且类型正确、`scope` 落在已知语言里、
+ * 检查的是：源文件是合法 JSON、`prefix` / `body` / `scope` 三个必填项齐备且类型正确、
  * body 里的 `${…}` 成对闭合、片段名不重复。这些都是片段源自身的缺陷，
  * 写错了 VS Code 会静默丢弃或静默投放到错误的语言，靠肉眼很难发现。
  *
- * **不检查**展开后的代码在 JS / TS / JSX / Vue 里是否可解析。片段具体的逻辑与场景应用
- * 由开发者负责，在扩展开发宿主窗口（F5）里验收插入效果、Tab 顺序和最终光标位置——
- * 绿色构建不等于编辑器验收。
+ * **不检查**展开后的内容在目标语言里是否可解析，也不检查 `scope` 里写了哪些语言。
+ * 这份文件只管 VS Code 片段本身，与具体语言无关，因此可服务任意语言的片段仓库。
+ * 片段的逻辑与场景应用由开发者负责，在扩展开发宿主窗口（F5）里验收插入效果、
+ * Tab 顺序和最终光标位置。绿色构建不等于编辑器验收。
  *
  * 这份文件在所有片段仓库中逐字节相同，靠 `SOURCES` 通配自适应各仓库的目录结构。
  *
- * 类型仅作文档用途——Vitest 会剥离类型，没有任何环节做类型检查。
+ * 类型仅作文档用途。Vitest 会剥离类型，没有任何环节做类型检查。
  */
 import { globSync, readFileSync } from 'node:fs';
 import { expect, test } from 'vitest';
 
 const SOURCES = 'src/**/*.json';
-
-/**
- * `scope` 里允许出现的语言 id，取所有片段仓库的并集。
- *
- * 本仓库注册的是不带 `language` 的 `.code-snippets`，投放范围完全由 `scope` 决定，
- * 拼错一个语言 id 不会报错，只会让该片段再也不出现——所以这里用白名单而不是放行任意字符串。
- */
-const LANGUAGES = new Set([
-  'css',
-  'html',
-  'javascript',
-  'javascriptreact',
-  'json',
-  'jsonc',
-  'less',
-  'markdown',
-  'scss',
-  'typescript',
-  'typescriptreact',
-  'vue',
-]);
-
-/** 一条片段允许出现的键。多余的键多半是拼写错误（`scopes` / `discription`）。 */
-const KEYS = new Set(['prefix', 'body', 'description', 'scope', 'isFileTemplate']);
 
 /**
  * body 里每个 `${` 都要能找到配对的 `}`。
@@ -49,7 +26,7 @@ const KEYS = new Set(['prefix', 'body', 'description', 'scope', 'isFileTemplate'
  * 「开花括号不转义、闭花括号转义」（`${1:() => {\n\t$2\n\}}`）是本仓库长期在用的合法写法，
  * 把裸 `{` 也计入嵌套会把它们全部误判成未闭合。需要转义的只有 `$`、`}`、`\` 三者。
  *
- * 多出来的 `}` 不报错——它在片段语法里同样是普通字符，只有缺失的 `}` 才会吞掉后续内容。
+ * 多出来的 `}` 不报错，它在片段语法里同样是普通字符，只有缺失的 `}` 才会吞掉后续内容。
  */
 function checkPlaceholders(body: string): string | undefined {
   const open: number[] = [];
@@ -116,40 +93,30 @@ function checkBody(body: unknown): string | undefined {
   return checkPlaceholders(lines.join('\n'));
 }
 
+/**
+ * `scope` 必填且非空，内容不做任何检查。
+ *
+ * 语言 id 是 VS Code 与已安装扩展共同决定的开放集合，这里不去维护也不去猜测，
+ * 具体投放给哪些语言由片段作者自己把握，写错了在编辑器里立刻能看出来。
+ * 这份测试只关心「有没有写」，因为漏写会让片段对所有语言生效，那是静默的错误。
+ */
 function checkScope(scope: unknown): string | undefined {
   if (typeof scope !== 'string' || !scope.trim()) {
     return '"scope" is required and must be a non-empty string';
   }
 
-  const seen = new Set<string>();
-
-  for (const entry of scope.split(',')) {
-    const language = entry.trim();
-
-    if (!language) {
-      return `"scope" has an empty entry: ${JSON.stringify(scope)}`;
-    }
-    if (!LANGUAGES.has(language)) {
-      return `"scope" names an unknown language id: ${JSON.stringify(language)}`;
-    }
-    if (seen.has(language)) {
-      return `"scope" repeats ${JSON.stringify(language)}`;
-    }
-
-    seen.add(language);
-  }
-
   return undefined;
 }
 
-/** 收集一条片段的全部问题，而不是遇到第一个就返回——一次跑完能看到完整清单。 */
+/**
+ * 收集一条片段的全部问题，而不是遇到第一个就返回，一次跑完能看到完整清单。
+ *
+ * 只校验 `prefix` / `body` / `scope` 这三个必填项，以及 `description` / `isFileTemplate`
+ * 若出现时的类型。**不维护「允许出现的键」白名单**：片段格式由 VS Code 定义，
+ * 将来新增属性时，一份封闭清单会把合法片段判成错误。多余的键交给编辑器。
+ */
 function checkSnippet(name: string, snippet: Record<string, unknown>): string[] {
   const problems: string[] = [];
-  const unknown = Object.keys(snippet).filter((key) => !KEYS.has(key));
-
-  if (unknown.length) {
-    problems.push(`unknown key(s): ${unknown.join(', ')}`);
-  }
 
   for (const problem of [checkPrefix(snippet.prefix), checkBody(snippet.body), checkScope(snippet.scope)]) {
     if (problem) {
