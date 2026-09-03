@@ -1,7 +1,7 @@
 {
   "name": "vscode-react-snippet",
   "displayName": "React Snippets",
-  "version": "19.3.0",
+  "version": "19.3.1",
   "description": "Only React 19+",
   "categories": [
     "Snippets"
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@types/node": "^24.13.3",
     "@vscode/vsce": "^3.9.2",
+    "ovsx": "^1.1.1",
     "oxfmt": "^0.65.0",
     "oxlint": "^1.81.0",
     "picocolors": "^1.1.1",

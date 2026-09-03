@@ -34,7 +34,19 @@ jobs:
       - name: Test
         run: pnpm run test
 
-      - name: Publish
-        run: pnpm run vsce:publish
+      # 只打一次包，两个市场发的是同一个文件。
+      # vsce:package 会先跑 clean，所以 *.vsix 必然只匹配到这一次的产物。
+      - name: Package
+        run: pnpm run vsce:package
+
+      # --packagePath 传现成的包，vsce 不再重新打包，
+      # 因此这里不需要 --no-dependencies。
+      - name: Publish to VS Code Marketplace
+        run: pnpm exec vsce publish --packagePath *.vsix
         env:
           VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+
+      - name: Publish to Open VSX
+        run: pnpm exec ovsx publish *.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OPEN_VSX_TOKEN }}
