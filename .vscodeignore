@@ -14,7 +14,7 @@
 # （./art/assets/x.png → https://github.com/<owner>/<repo>/raw/HEAD/art/assets/x.png）
 # 因此素材无需打包，只保留 package.json 的 icon 字段所引用的图标。
 !README.md
-!README-CN.md
+!README.zh-CN.md
 !CHANGELOG.md
 !LICENSE
 !art/icon.png

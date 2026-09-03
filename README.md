@@ -20,7 +20,7 @@
 
 ![Screenshot](https://raw.githubusercontent.com/caringrun/assets/master/vscode-react-snippet.gif)
 
-[中文 README](./README-CN.md)
+[中文 README](./README.zh-CN.md)
 
 ## Design Notes
 

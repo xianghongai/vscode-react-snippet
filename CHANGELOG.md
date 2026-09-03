@@ -4,6 +4,11 @@ All notable changes to the **React Snippets** extension are documented in this f
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [19.3.0] - 2026-09-03
+
+- Unify packaging and publishing scripts to `vsce:package` and `vsce:publish`
+- Update GitHub Actions CI workflow to use `pnpm run vsce:publish`
+
 ## [19.2.6] - 2026-09-02
 
 - Renamed the paired JSX/TSX variants of five snippets — `memo`, `memo arePropsEqual`, `React Functional Component`, `React Functional Component (export default)` and `React Functional Component with Ref` — to `… JavaScript` and `… TypeScript`. They used to share a name, which only worked while they shipped in two separate per-language files. **The prefixes are unchanged**; only the label shown beside the prefix in the completion list differs
@@ -45,10 +50,6 @@ Targets React 19.2. This release fills in the React 19 APIs that were still miss
 - **`StrictMode`** / `sm`.
 - **`hydrateRoot`** / `hr` — the SSR counterpart to the existing `createRoot`.
 - **`flushSync`** / `fs`.
-
-### Changed
-
-- Documented the new snippets in both `README.md` and `README-CN.md`.
 
 ### Internal
 

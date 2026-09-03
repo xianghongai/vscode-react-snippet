@@ -35,6 +35,6 @@ jobs:
         run: pnpm run test
 
       - name: Publish
-        run: pnpm run publish
+        run: pnpm run vsce:publish
         env:
           VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
