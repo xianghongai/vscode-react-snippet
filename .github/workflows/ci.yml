@@ -39,48 +39,31 @@ jobs:
       - name: Package
         run: pnpm run vsce:package
 
-      # --packagePath 传现成的包，vsce 不再重新打包，
-      # 因此这里不需要 --no-dependencies。
-      # 容错处理：
-      # 1. 过滤已存在版本错误（already exists），使重试或已发布的版本具备幂等性
-      # 2. continue-on-error 确保两家市场互不阻塞，即便一家异常另一家仍会尝试发布
-      # 3. 最终通过 Verify publish status 步骤聚合校验，有非预期的真实错误时依然把 CI 置为失败
+      # --packagePath 传现成的包，vsce 不再重新打包，因此这里不需要 --no-dependencies。
+      # --skip-duplicate 由发布工具自身判定版本重复（vsce 比对市场版本列表与 409，
+      # ovsx 比对服务端错误），命中时正常退出，不再打印 Error，重跑发布具备幂等性。
+      # 其余任何失败都直接冒泡成 job failure，不做降级。
+      # grep 只用于补一条 warning 注解，匹配不上至多是少一条注解，不影响成败判定。
       - name: Publish to VS Code Marketplace
         id: vsce
-        continue-on-error: true
         run: |
-          exit_code=0
-          output=$(pnpm exec vsce publish --packagePath *.vsix 2>&1) || exit_code=$?
-          echo "$output"
-          if [ $exit_code -ne 0 ]; then
-            if echo "$output" | grep -iq "already exists"; then
-              echo "::warning::VS Code Marketplace: version already exists, skipping."
-            else
-              exit $exit_code
-            fi
+          set -o pipefail
+          pnpm exec vsce publish --packagePath *.vsix --skip-duplicate 2>&1 | tee "${RUNNER_TEMP:-/tmp}/vsce.log"
+          if grep -q "Skipping publish." "${RUNNER_TEMP:-/tmp}/vsce.log"; then
+            echo "::warning::VS Code Marketplace: version already published, skipped."
           fi
         env:
           VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
 
+      # 仅 VS Code Marketplace 失败时不阻塞 Open VSX；
+      # Package 等前置步骤失败或 run 被取消时，vsce 的 outcome 不是 failure，此步一并跳过。
       - name: Publish to Open VSX
-        id: ovsx
-        continue-on-error: true
+        if: success() || steps.vsce.outcome == 'failure'
         run: |
-          exit_code=0
-          output=$(pnpm exec ovsx publish *.vsix 2>&1) || exit_code=$?
-          echo "$output"
-          if [ $exit_code -ne 0 ]; then
-            if echo "$output" | grep -iqE "already (exists|published)"; then
-              echo "::warning::Open VSX: version already exists, skipping."
-            else
-              exit $exit_code
-            fi
+          set -o pipefail
+          pnpm exec ovsx publish *.vsix --skip-duplicate 2>&1 | tee "${RUNNER_TEMP:-/tmp}/ovsx.log"
+          if grep -q "Skipping publish." "${RUNNER_TEMP:-/tmp}/ovsx.log"; then
+            echo "::warning::Open VSX: version already published, skipped."
           fi
         env:
           OVSX_PAT: ${{ secrets.OPEN_VSX_TOKEN }}
-
-      - name: Verify publish status
-        if: steps.vsce.outcome == 'failure' || steps.ovsx.outcome == 'failure'
-        run: |
-          echo "::error::Publish failed: VS Code Marketplace (${{ steps.vsce.outcome }}), Open VSX (${{ steps.ovsx.outcome }})"
-          exit 1
